@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração - Paz Kids em Ação</title>
+
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+
+<body>
+
+    <header class="cabecalho-admin">
+        <div class="logo-titulo">
+            <img src="/imagens/pazAcao.png" alt="Logo" class="logo-login">
+            <div class="titulo-admin">                
+                <h1>Painel Administrativo</h1>                
+            </div>
+        </div>
+
+        <button class = "botao-sair" onclick="logout()">
+            Sair
+        </button>
+    </header>
+
+    <main class="conteudo-admin">
+
+        <section class="barra-superior">
+
+            <h2>Crianças Cadastradas</h2>
+
+            <button class="botao-novo" id="btnNovaCrianca">
+                + Nova Criança
+            </button>
+
+        </section>
+
+        <div class="busca-global">
+
+            <input  type="text"   id="buscaGlobal"    placeholder="Buscar na tabela..." >
+
+        </div>
+
+        <section class="tabela-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Foto</th>
+                        <th>Nome</th>
+                        <th>Data de Nascimento</th>
+                        <th>Idade</th>
+                        <th>Responsável</th>
+                        <th>Telefone</th>
+                        <th>Ativo</th>
+                        <th>Ações</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="lista-criancas">
+
+                    <!-- Dados virão do Supabase -->
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <script type="module" src="../js/admin.js"></script>
+
+</body>
+
+</html>

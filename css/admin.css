@@ -1,0 +1,182 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+}
+
+/* CABEÇALHO */
+
+.cabecalho-admin {
+    background-color: #022050;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titulo-admin h1 {
+    font-size: 1.8rem;
+}
+
+.titulo-admin p {
+    margin-top: 5px;
+}
+
+.logo-login {
+    width: 80px;
+
+    display: block;
+
+    margin: 0 auto 10px;
+}
+
+.logo-titulo{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* CONTEÚDO */
+
+.conteudo-admin {
+    padding: 30px;
+}
+
+/* BARRA SUPERIOR */
+
+.barra-superior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+/* BOTÕES */
+
+.botao-novo,
+.botao-sair {
+    border: none;
+    cursor: pointer;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+.botao-novo {
+    background-color: #16a34a;
+    color: white;
+}
+
+.botao-sair {
+    background-color: white;
+    color: #022050;
+}
+
+.botao-editar {
+
+    background-color: #022050;
+
+    color: white;
+
+    border: none;
+
+    padding: 8px 16px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.botao-editar:hover {
+
+    transform: translateY(-1px);
+
+    opacity: 0.9;
+}
+
+.botao-editar:active {
+
+    transform: translateY(1px);
+}
+
+/* TABELA */
+
+.tabela-container {
+    background-color: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #022050;
+    color: white;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+}
+
+tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* FOTO */
+
+.foto-crianca {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+/* =========================================
+BUSCA
+========================================= */
+
+.busca-global{
+  margin-bottom:20px;
+  display:flex;
+  justify-content:flex;
+  
+}
+
+.busca-global input{
+  width:300px;
+  max-width:100%;
+  padding:6px;
+  border-radius:10px;
+  border:1px solid #ccc;
+}

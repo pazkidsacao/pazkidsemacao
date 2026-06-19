@@ -1,0 +1,68 @@
+.pagina-login {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #f5f7fa;
+}
+
+.cartao-login {
+    width: 100%;
+    max-width: 420px;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.1);
+}
+
+.logo-login {
+    width: 120px;
+
+    display: block;
+
+    margin: 0 auto 20px;
+}
+
+.cartao-login h1 {
+    text-align: center;
+
+    color: #022050;
+
+    margin-bottom: 30px;
+}
+
+.cartao-login form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cartao-login input {
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+}
+
+.cartao-login button {
+    margin-top: 10px;
+
+    padding: 12px;
+
+    background-color: #022050;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}

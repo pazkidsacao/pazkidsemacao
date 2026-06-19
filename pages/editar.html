@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Editar Criança</title>
+
+    <link rel="stylesheet" href="../css/editar.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Editar Criança</h1>
+
+        <form id="form-crianca">
+
+            <!-- FOTO + DADOS PRINCIPAIS -->
+
+            <div class="cabecalho-crianca">
+
+                <div class="area-foto">
+
+                    <img
+                        id="foto-atual"
+                        class="foto-atual"
+                        src=""
+                        alt="Foto da criança">
+
+                    
+
+                </div>
+
+                <div class="dados-principais">
+
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Nome completo">
+
+                    <input
+                        type="date"
+                        id="nascimento">
+
+                    <input
+                        type="text"
+                        id="sexo"
+                        placeholder="Sexo">
+
+                    <input
+                        type="text"
+                        id="responsavel"
+                        placeholder="Nome do responsável">
+
+                    <input
+                        type="text"
+                        id="telefone"
+                        placeholder="Telefone">
+
+                    <input
+                        type="text"
+                        id="endereco"
+                        placeholder="Endereço">
+
+                    
+
+                    <input
+                        type="file"
+                        id="foto"
+                        
+                        accept="image/*">
+
+                </div>
+
+            </div>
+
+            <!-- DEMAIS DADOS -->
+
+            <div class="grid">
+
+                <input
+                    type="text"
+                    id="serie"
+                    placeholder="Série escolar">
+
+                <input
+                    type="text"
+                    id="irmaos"
+                    placeholder="Possui irmãos?">
+
+                <input
+                    type="text"
+                    id="qtd_irmaos"
+                    placeholder="Quantidade de irmãos">
+
+                <input
+                    type="text"
+                    id="blusa"
+                    placeholder="Tamanho da blusa">
+
+                <input
+                    type="text"
+                    id="calca"
+                    placeholder="Tamanho da calça">
+
+                <input
+                    type="text"
+                    id="calcado"
+                    placeholder="Tamanho do calçado">
+
+                <input
+                    type="text"
+                    id="hobby"
+                    placeholder="Hobby">
+
+                <input
+                    type="text"
+                    id="religiao"
+                    placeholder="Religião da família">
+
+                <textarea
+                    id="observacoes"
+                    rows="5"
+                    placeholder="Observações">
+                </textarea>
+
+
+                
+
+            </div>
+            <br><br>
+            <div class="grupo-campo">
+
+                    <label for="ativo">
+                        Ativo
+                    </label>
+                    
+                    <select id="ativo">
+
+                        <option value="Sim">
+                            Sim
+                        </option>
+
+                        <option value="Não">
+                            Não
+                        </option>
+
+                    </select>
+
+                </div>
+
+        
+
+            
+            <!-- BOTÕES -->
+
+            <div class="acoes">
+
+                <button
+                    type="button"
+                    onclick="atualizarCrianca()">
+
+                    Atualizar
+
+                </button>
+
+                <button
+                    type="button"
+                    onclick="voltar()">
+
+                    Voltar
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <script type="module"
+            src="../js/editar.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,220 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+
+.cartao-campanha {
+
+    width: 400px;
+
+    padding: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    gap: 15px;
+}
+
+.imagem-campanha {
+
+    width: 85%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+/* .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+} */
+
+.secao-principal {
+    min-height: 25vh;
+
+    background-color: #17d8d8;
+    display: flex;
+    align-items: center;
+}
+/* =========================
+   CONTEÚDO INTERNO
+========================= */
+
+.conteudo-principal {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+#logo {
+    width: 100px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+/* =========================
+   ÁREA DOS TEXTOS
+========================= */
+
+.area-texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* =========================
+   SLOGAN
+========================= */
+
+.slogan {
+    color: white;
+
+    font-size: 3.0rem;
+    font-weight: bold;
+    max-width: 100%;
+
+    margin-bottom: 20px;
+}
+
+/* =========================
+   DESCRIÇÃO
+========================= */
+
+.descricao {
+    color: white;
+
+    font-size: 1.55rem;
+    line-height: 1.8;
+
+    max-width: 100%;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 768px) {
+
+    .conteudo-principal {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #logo {
+        width: 180px;
+    }
+
+    .slogan {
+        font-size: 1.8rem;
+    }
+
+    .descricao {
+        font-size: 1rem;
+    }
+}
+
+/* =========================
+   SEÇÃO INFORMAÇÕES
+========================= */
+
+.secao-informacoes {
+    padding: 60px 0;
+    background-color: #f5f7fa;
+}
+
+/* =========================
+   GRADE DE CARTÕES
+========================= */
+
+.grade-cartoes {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   CARTÃO INDIVIDUAL
+========================= */
+
+.cartao-informacao {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+
+    background-color: #ffffff;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+
+.cartao-informacao:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+   TÍTULOS
+========================= */
+
+.cartao-informacao h3 {
+    color: #022050;
+
+    font-size: 1.4rem;
+
+    margin-bottom: 15px;
+}
+
+/* =========================
+   TEXTO
+========================= */
+
+.cartao-informacao p {
+    color: #4b5563;
+
+    line-height: 1.7;
+
+    font-size: 1rem;
+}

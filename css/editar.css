@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #022050;
+}
+
+/* TOPO */
+
+.topo {
+    background-color: #022050;
+    color: white;
+
+    padding: 20px 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topo button {
+    background: white;
+    color: #022050;
+
+    border: none;
+    padding: 10px 15px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+/* CONTAINER */
+
+.container {
+    padding: 30px;
+}
+
+/* FORM */
+
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* GRID CAMPOS */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+/* INPUTS */
+
+input, textarea {
+    padding: 10px;
+    border-radius: 8px;
+
+    border: 1px solid #ccc;
+
+    outline: none;
+}
+
+textarea {
+    width: 100%;
+    margin-top: 15px;
+    height: 120px;
+    resize: none;
+}
+
+/* BOTÃO */
+
+button {
+    margin-top: 20px;
+
+    background-color: #16a34a;
+    color: white;
+
+    border: none;
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #12823a;
+}
+
+.cabecalho-crianca {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-bottom: 30px;
+}
+
+.area-foto {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 220px;
+}
+
+.foto-atual {
+    width: 220px;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    border: 2px solid #d1d5db;
+}
+
+.dados-principais {
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}

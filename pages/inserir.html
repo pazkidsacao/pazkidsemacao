@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Criança - Paz Kids em Ação</title>
+
+    <link rel="stylesheet" href="../css/inserir.css">
+</head>
+
+<body>
+
+    <header class="topo">
+        <h1>Cadastro de Criança</h1>
+
+        <button onclick="voltar()">
+            Voltar
+        </button>
+    </header>
+
+    <main class="container">
+
+        <form id="form-crianca">
+
+            <div class="grid">
+
+                <input type="text" id="nome" placeholder="Nome completo">
+                <input type="date" id="nascimento">
+                <input type="text" id="sexo" placeholder="Sexo">
+                <input type="text" id="responsavel" placeholder="Nome do responsável">
+                <input type="text" id="telefone" placeholder="Telefone">
+                <input type="text" id="endereco" placeholder="Endereço">
+                
+
+               
+                <input type="text" id="serie" placeholder="Série escolar">
+                <input type="text" id="irmaos" placeholder="Possui irmãos? (Sim/Não)">
+                <input type="number" id="qtd_irmaos" placeholder="Quantidade de irmãos">
+
+                <input type="text" id="blusa" placeholder="Tamanho da blusa">
+                <input type="text" id="calca" placeholder="Tamanho da calça">
+                <input type="number" id="calcado" placeholder="Tamanho do calçado">
+
+                <input type="text" id="hobby" placeholder="Hobby">
+                <input type="text" id="religiao" placeholder="Religião da família">
+
+            </div>
+
+            <textarea id="observacoes" placeholder="Observações"></textarea>
+
+            <input type="file" id="foto">
+
+            <button type="button" onclick="salvarCrianca()">
+                Salvar Criança
+            </button>
+
+        </form>
+
+    </main>
+
+    <script type="module" src="../js/inserir.js"></script>
+
+</body>
+
+</html>
