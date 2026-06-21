@@ -9,7 +9,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/acampamento.css">
 </head>
 
 <body>
@@ -52,11 +52,55 @@
 
         <!-- CAMPANHA DE APADRINHAMENTO -->
 
-        <section class="secao-campanha">
+       <section class="dados-acampa">
+
+            <div class="container-acampa">
+
+                <img
+                    src="/imagens/acampakids.jpg"
+                    alt="Acampamento"
+                    class="imagem-acampa">
+
+                <div class="conteudo-acampa">
+
+                    <h2 class="titulo-acampa">
+                        Acampa Paz Kids em Ação 2026
+                    </h2>
+
+                    <p class="texto-acampa-paragrafo">
+                        O Acampa Kids é um evento emocionante projetado especialmente para crianças de 8 a 12 anos, onde cada momento é uma oportunidade para aprender, crescer e se conectar com outros jovens em sua jornada espiritual.
+                    </p>
+
+                    <p class="texto-acampa-paragrafo">
+                        Durante esses dias inesquecíveis, as crianças participarão de uma série de atividades empolgantes, desde jogos ao ar livre até desafios criativos, todas elaboradas para promover amizades, trabalho em equipe e, é claro, momentos de reflexão espiritual.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="grade_criancas">
+            <h1 class="titulo-pagina">Crianças Disponíveis</h1>
+
+            <section class="galeria">
+
+                <div id="grid-criancas" class="grid-criancas">
+                    <!-- cards do Supabase entram aqui -->
+                </div>
+
+            </section>
+
+            <script type="module" src="../js/acampamento.js"></script>
+
+        </section>
+
+<!--        <section class="secao-campanha">
 
             <div class="container">
 
-                <div class="cartao-campanha" onclick="window.location.href='/pages/acampamento.html'">
+                <div class="cartao-campanha" onclick="window.location.href='acampamento.html'">
                     
                     <img src="/imagens/acampakids.jpg" alt="Acampamento" class="imagem-campanha">
 
@@ -70,7 +114,7 @@
 
                 </div>  
 
-                <div class="cartao-campanha" onclick= "window.location.href='/pages/natal.html'">
+                <div class="cartao-campanha" onclick= "window.location.href='natal.html'">
                     
                     <img src="/imagens/natal solidario.jpg" alt="Acampamento" class="imagem-campanha">
 
@@ -87,9 +131,10 @@
             </div>
 
         </section>
+-->
 
         <!-- INFORMAÇÕES INSTITUCIONAIS -->
-
+<!--
         <section class="secao-informacoes">
 
             <div class="container grade-cartoes">
@@ -132,15 +177,11 @@
             
 
         </section>
-
+ -->
     </main>
 
 </body>
 
-<footer>
-    <button class = "botao-restrito" onclick= "window.location.href=('/pages/login.html')">
-         Acesso Área Restrita
-    </button>
-</footer>
+
 
 </html>
