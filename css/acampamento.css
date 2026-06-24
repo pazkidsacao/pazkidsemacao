@@ -1,365 +1,334 @@
-/* =========================
-   CONFIGURAÇÕES GERAIS
-========================= */
+/* =========================================
+RESET
+========================================= */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+font-family: Arial, Helvetica, sans-serif;
+background-color: #ffffff;
+color: #1f2937;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* =========================================
+HEADER
+========================================= */
 
 .secao-principal {
-    min-height: 15vh;
-    background-color: #17d8d8;
-    display: flex;
-    align-items: flex-start;
+background-color: #17d8d8;
+padding: 15px 0;
 }
 
 .conteudo-principal {
-    display: flex;
-    align-items: center;
-    gap: 30px;
+max-width: 1200px;
+margin: 0 auto;
+
+
+display: flex;
+align-items: center;
+gap: 20px;
+
+padding: 0 20px;
+
+
 }
 
 #logo {
-    width: 80px;
-    height: auto;
-    flex-shrink: 0;
-    margin-left: 20px;
+width: 80px;
+height: auto;
+flex-shrink: 0;
 }
 
 .area-texto {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+display: flex;
+flex-direction: column;
 }
 
 .slogan {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 10px;
+color: white;
+font-size: 1.5rem;
+font-weight: bold;
+margin-bottom: 8px;
 }
 
 .descricao {
-    color: white;
-    font-size: 1.1rem;
-    line-height: 1.8;
+color: white;
+font-size: 1rem;
+line-height: 1.6;
 }
 
-/* =========================
-   SEÇÃO ACAMPAMENTO
-========================= */
+/* =========================================
+SEÇÃO ACAMPAMENTO
+========================================= */
 
 .dados-acampa {
-
-    padding: 40px 20px;
-
+padding: 40px 20px;
 }
 
 .container-acampa {
+max-width: 1200px;
+margin: 0 auto;
 
-    max-width: 1200px;
 
-    margin: 0 auto;
+display: flex;
+gap: 30px;
 
-    display: flex;
+align-items: flex-start;
 
-    gap: 30px;
-
-    align-items: flex-start;
 
 }
 
 .imagem-acampa {
+width: 280px;
+height: 280px;
 
-    width: 280px;
 
-    height: 280px;
+object-fit: cover;
 
-    object-fit: cover;
+border-radius: 12px;
 
-    border-radius: 12px;
+flex-shrink: 0;
 
-    flex-shrink: 0;
 
 }
 
 .conteudo-acampa {
-
-    flex: 1;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: flex-start;
-
+flex: 1;
 }
 
 .titulo-acampa {
-
-    font-size: 2rem;
-
-    color: #022050;
-
-    font-weight: 600;
-
-    margin-bottom: 20px;
-
+font-size: 2rem;
+color: #022050;
+margin-bottom: 20px;
 }
 
 .texto-acampa-paragrafo {
-
-    font-size: 1rem;
-
-    line-height: 1.8;
-
-    margin-bottom: 15px;
-
-    color: #4b5563;
-
+color: #4b5563;
+line-height: 1.8;
+margin-bottom: 15px;
 }
 
-/* =========================
-   RESPONSIVO
-========================= */
+/* =========================================
+TÍTULO DA GALERIA
+========================================= */
 
-@media (max-width: 768px) {
-
-    .container-acampa {
-
-        flex-direction: column;
-
-        align-items: center;
-
-    }
-
-    .imagem-acampa {
-
-        width: 100%;
-
-        max-width: 350px;
-
-        height: auto;
-
-    }
-
-    .conteudo-acampa {
-
-        text-align: center;
-
-    }
-
-}
-
-/* =========================
-   SEÇÃO CARDS CRIANÇAS
-========================= */
-
-
-
-/* título */
 .titulo-pagina {
-    text-align: center;
-    margin: 30px 0;
-    font-size: 2rem;
-    color: #022050;
+text-align: center;
+color: #022050;
+font-size: 2rem;
+margin: 20px 0 30px;
 }
 
-/* grid */
+/* =========================================
+GALERIA
+========================================= */
+
+.galeria {
+width: 100%;
+overflow-x: auto;
+padding: 20px;
+}
+
+/* =========================================
+GRID DE CRIANÇAS
+========================================= */
 
 .grid-criancas {
-    width: 90%;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
-    margin-left: 20px;
+
+
+display: grid;
+
+grid-template-columns: repeat(6, 140px);
+
+gap: 15px;
+
+justify-content: center;
+
+min-width: 950px;
+
+margin: 0 auto;
+
+
 }
 
-/* card */
+/* =========================================
+CARD
+========================================= */
+
 .card-crianca {
-    position: relative;
-    border-radius: 12px;
-    overflow: hidden;
-    cursor: pointer;
+
+
+position: relative;
+
+width: 140px;
+
+border-radius: 12px;
+
+overflow: hidden;
+
+cursor: pointer;
+
+background: white;
+
+box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+
+transition: transform 0.2s ease;
+
+
 }
 
-/* imagem */
+.card-crianca:hover {
+transform: translateY(-4px);
+}
+
+/* =========================================
+FOTO
+========================================= */
+
 .card-crianca img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    display: block;
+
+
+width: 100%;
+
+height: 180px;
+
+object-fit: contain;
+
+background-color: #f3f4f6;
+
+display: block;
+
+
 }
 
-/* overlay hover */
+/* =========================================
+OVERLAY
+========================================= */
+
 .overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.7);
-    color: white;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
-    opacity: 0;
-    transition: 0.3s;
-    text-align: center;
-    padding: 10px;
+position: absolute;
+
+inset: 0;
+
+background: rgba(0, 0, 0, 0.75);
+
+color: white;
+
+display: flex;
+
+flex-direction: column;
+
+justify-content: center;
+
+align-items: center;
+
+text-align: center;
+
+padding: 10px;
+
+opacity: 0;
+
+transition: opacity 0.3s ease;
+
+
 }
 
 .card-crianca:hover .overlay {
-    opacity: 1;
+opacity: 1;
 }
 
-
-/* =========================
-   SEÇÃO CAMPANHAS
-========================= */
-
-.container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin-top: 12px;
+.overlay h3 {
+font-size: 0.9rem;
+margin-bottom: 8px;
 }
 
-.cartao-campanha {
-    width: 500px;
-    padding: 10px;
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-    text-align: center;
-
-    gap: 10px;
+.overlay p {
+font-size: 0.8rem;
+margin-bottom: 4px;
 }
 
-.imagem-campanha {
-    width: 75%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 10px;
+/* =========================================
+SCROLLBAR
+========================================= */
+
+.galeria::-webkit-scrollbar {
+height: 8px;
 }
 
-.botao-principal {
-    color: #214988;
-    text-decoration: underline;
+.galeria::-webkit-scrollbar-track {
+background: #e5e7eb;
+border-radius: 10px;
 }
 
-/* =========================
-   SEÇÃO INFORMAÇÕES
-========================= */
-
-.secao-informacoes {
-    padding: 20px 0;
-    background-color: #f5f7fa;
+.galeria::-webkit-scrollbar-thumb {
+background: #022050;
+border-radius: 10px;
 }
 
-.grade-cartoes {
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.cartao-informacao {
-    flex: 1;
-
-    min-width: 300px;
-    max-width: 450px;
-
-    background-color: #ffffff;
-
-    padding: 10px;
-
-    border-radius: 12px;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-
-    transition: all 0.3s ease;
-
-    text-align: center;
-}
-
-.cartao-informacao:hover {
-    transform: translateY(-5px);
-
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
-
-.cartao-informacao h3 {
-    color: #022050;
-
-    font-size: 1.4rem;
-
-    margin-bottom: 15px;
-}
-
-.cartao-informacao p {
-    color: #4b5563;
-
-    line-height: 1.7;
-
-    font-size: 1rem;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-.botao-restrito {
-    border: none;
-
-    cursor: pointer;
-
-    padding: 10px;
-
-    border-radius: 8px;
-
-    font-weight: bold;
-
-    background-color: white;
-
-    color: #e64f4f;
-
-    font-size: small;
-}
-
-/* =========================
-   RESPONSIVO
-========================= */
+/* =========================================
+RESPONSIVO
+========================================= */
 
 @media (max-width: 768px) {
 
-    .conteudo-principal {
-        flex-direction: column;
-        text-align: center;
-    }
 
-    #logo {
-        width: 180px;
-    }
+.conteudo-principal {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+}
 
-    .slogan {
-        font-size: 1.8rem;
-    }
+#logo {
+    width: 90px;
+}
 
-    .descricao {
-        font-size: 1rem;
-    }
+.slogan {
+    font-size: 1.3rem;
+}
+
+.descricao {
+    font-size: 0.95rem;
+}
+
+.container-acampa {
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagem-acampa {
+    width: 100%;
+    max-width: 280px;
+    height: 220px;
+}
+
+.conteudo-acampa {
+    text-align: center;
+}
+
+.titulo-acampa {
+    font-size: 1.6rem;
+}
+
+.grid-criancas {
+    grid-template-columns: repeat(6, 140px);
+    min-width: 950px;
+}
+
+
+}
+
+@media (max-width: 480px) {
+
+
+.titulo-pagina {
+    font-size: 1.6rem;
+}
+
+
 }

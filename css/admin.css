@@ -1,182 +1,270 @@
+/* =========================================
+RESET
+========================================= */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+/* =========================================
+BODY
+========================================= */
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f6f9;
+font-family: Arial, Helvetica, sans-serif;
+background-color: #f4f6f9;
+color: #1f2937;
 }
 
-/* CABEÇALHO */
+/* =========================================
+CABEÇALHO
+========================================= */
 
 .cabecalho-admin {
-    background-color: #022050;
-    color: white;
-    padding: 20px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+background-color: #022050;
+color: white;
+padding: 20px 40px;
+
+display: flex;
+justify-content: space-between;
+align-items: center;
+
 }
 
-.titulo-admin h1 {
-    font-size: 1.8rem;
-}
-
-.titulo-admin p {
-    margin-top: 5px;
+.logo-titulo {
+display: flex;
+align-items: center;
+gap: 20px;
 }
 
 .logo-login {
-    width: 80px;
-
-    display: block;
-
-    margin: 0 auto 10px;
+width: 80px;
+height: auto;
 }
 
-.logo-titulo{
-    display: flex;
-    align-items: center;
-    gap: 20px;
+.titulo-admin h1 {
+font-size: 1.8rem;
 }
 
-/* CONTEÚDO */
+.titulo-admin p {
+margin-top: 5px;
+}
+
+/* =========================================
+CONTEÚDO
+========================================= */
 
 .conteudo-admin {
-    padding: 30px;
+padding: 30px;
 }
 
-/* BARRA SUPERIOR */
+/* =========================================
+BARRA SUPERIOR
+========================================= */
 
 .barra-superior {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 20px;
 
-    margin-bottom: 30px;
-}
-
-/* BOTÕES */
-
-.botao-novo,
-.botao-sair {
-    border: none;
-    cursor: pointer;
-
-    padding: 12px 20px;
-
-    border-radius: 8px;
-
-    font-weight: bold;
-}
-
-.botao-novo {
-    background-color: #16a34a;
-    color: white;
-}
-
-.botao-sair {
-    background-color: white;
-    color: #022050;
-}
-
-.botao-editar {
-
-    background-color: #022050;
-
-    color: white;
-
-    border: none;
-
-    padding: 8px 16px;
-
-    border-radius: 8px;
-
-    cursor: pointer;
-
-    font-size: 0.9rem;
-
-    font-weight: 600;
-
-    transition: 0.2s;
-}
-
-.botao-editar:hover {
-
-    transform: translateY(-1px);
-
-    opacity: 0.9;
-}
-
-.botao-editar:active {
-
-    transform: translateY(1px);
-}
-
-/* TABELA */
-
-.tabela-container {
-    background-color: white;
-
-    border-radius: 12px;
-
-    overflow: hidden;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-thead {
-    background-color: #022050;
-    color: white;
-}
-
-th,
-td {
-    padding: 15px;
-    text-align: left;
-}
-
-tbody tr {
-    border-bottom: 1px solid #e5e7eb;
-}
-
-tbody tr:hover {
-    background-color: #f8fafc;
-}
-
-/* FOTO */
-
-.foto-crianca {
-    width: 50px;
-    height: 50px;
-
-    border-radius: 50%;
-
-    object-fit: cover;
 }
 
 /* =========================================
 BUSCA
 ========================================= */
 
-.busca-global{
-  margin-bottom:20px;
-  display:flex;
-  justify-content:flex;
-  
+.busca-global {
+margin-bottom: 20px;
 }
 
-.busca-global input{
-  width:300px;
-  max-width:100%;
-  padding:6px;
-  border-radius:10px;
-  border:1px solid #ccc;
+.busca-global input {
+width: 100%;
+max-width: 400px;
+padding: 10px 14px;
+
+border: 1px solid #d1d5db;
+border-radius: 10px;
+
+font-size: 0.95rem;
+
+}
+
+/* =========================================
+BOTÕES
+========================================= */
+
+.botao-novo,
+.botao-sair {
+border: none;
+cursor: pointer;
+padding: 12px 20px;
+
+border-radius: 8px;
+
+font-weight: bold;
+
+transition: 0.2s;
+
+}
+
+.botao-novo {
+background-color: #16a34a;
+color: white;
+}
+
+.botao-sair {
+background-color: white;
+color: #022050;
+}
+
+.botao-novo:hover,
+.botao-sair:hover {
+opacity: 0.9;
+}
+
+.botao-editar {
+background-color: #022050;
+color: white;
+border: none;
+
+padding: 8px 16px;
+
+border-radius: 8px;
+
+cursor: pointer;
+
+font-size: 0.9rem;
+font-weight: 600;
+
+transition: 0.2s;
+
+}
+
+.botao-editar:hover {
+transform: translateY(-1px);
+opacity: 0.9;
+}
+
+.botao-editar:active {
+transform: translateY(1px);
+}
+
+/* =========================================
+TABELA
+========================================= */
+
+.tabela-container {
+background-color: white;
+border-radius: 12px;
+
+overflow-x: auto;
+overflow-y: hidden;
+
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+table {
+width: 100%;
+min-width: 900px;
+border-collapse: collapse;
+}
+
+thead {
+background-color: #022050;
+color: white;
+}
+
+th,
+td {
+padding: 15px;
+text-align: left;
+}
+
+tbody tr {
+border-bottom: 1px solid #e5e7eb;
+}
+
+tbody tr:hover {
+background-color: #f8fafc;
+}
+
+/* =========================================
+FOTO
+========================================= */
+
+.foto-crianca {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+object-fit: cover;
+}
+
+/* =========================================
+RESPONSIVO TABLET/CELULAR
+========================================= */
+
+@media (max-width: 768px) {
+
+
+.cabecalho-admin {
+    flex-direction: column;
+    gap: 15px;
+
+    padding: 20px;
+
+    text-align: center;
+}
+
+.logo-titulo {
+    flex-direction: column;
+    gap: 10px;
+}
+
+.titulo-admin h1 {
+    font-size: 1.4rem;
+}
+
+.conteudo-admin {
+    padding: 15px;
+}
+
+.barra-superior {
+    flex-direction: column;
+    gap: 15px;
+
+    align-items: stretch;
+}
+
+.botao-novo {
+    width: 100%;
+}
+
+.busca-global {
+    width: 100%;
+}
+
+.busca-global input {
+    max-width: 100%;
+}
+
+th,
+td {
+    padding: 10px;
+    font-size: 0.85rem;
+
+    white-space: nowrap;
+}
+
+.foto-crianca {
+    width: 40px;
+    height: 40px;
+}
+
+.botao-editar {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+}
 }

@@ -27,7 +27,11 @@
 
                 <input type="text" id="nome" placeholder="Nome completo">
                 <input type="date" id="nascimento">
-                <input type="text" id="sexo" placeholder="Sexo">
+                <select id="sexo">
+                    <option value="" disabled selected>Sexo</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Masculino">Masculino</option>
+                </select>
                 <input type="text" id="responsavel" placeholder="Nome do responsável">
                 <input type="text" id="telefone" placeholder="Telefone">
                 <input type="text" id="endereco" placeholder="Endereço">
@@ -35,7 +39,13 @@
 
                
                 <input type="text" id="serie" placeholder="Série escolar">
-                <input type="text" id="irmaos" placeholder="Possui irmãos? (Sim/Não)">
+                
+                <select id="irmaos">
+                    <option value="" disabled selected>Possui irmãos?</option>
+                    <option value="Sim">Sim</option>
+                    <option value="Não">Não</option>
+                </select>
+                
                 <input type="number" id="qtd_irmaos" placeholder="Quantidade de irmãos">
 
                 <input type="text" id="blusa" placeholder="Tamanho da blusa">

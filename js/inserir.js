@@ -83,7 +83,7 @@ window.salvarCrianca = async function () {
         .from("criancas")
         .insert([{
             nome: nome,
-            data_nascimento: nascimento,
+            data_nascimento: nascimento || null,
             sexo: sexo,
             nome_responsavel: responsavel,
             telefone: telefone,
