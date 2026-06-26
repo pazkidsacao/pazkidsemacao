@@ -47,6 +47,12 @@
     </header>
 
     <!-- CONTEÚDO PRINCIPAL -->
+    
+     <div class="btn-area">
+        <button class="btn-acompanhamento">
+            Página de Acompanhamento
+        </button>
+    </div>
 
     <main>
 
@@ -81,6 +87,8 @@
 
         </section>
 
+       
+
         <section class="grade_criancas">
             <h1 class="titulo-pagina">Crianças Disponíveis</h1>
 
@@ -96,89 +104,48 @@
 
         </section>
 
-<!--        <section class="secao-campanha">
 
-            <div class="container">
-
-                <div class="cartao-campanha" onclick="window.location.href='acampamento.html'">
-                    
-                    <img src="/imagens/acampakids.jpg" alt="Acampamento" class="imagem-campanha">
-
-                    <p>
-                        Ajude uma criança a viver dias de aprendizado, diversão e crescimento na presença de Deus. Seu apoio pode proporcionar experiências que fortalecerão sua fé e marcarão sua vida para sempre.
-                    </p>
-
-                    <button class="botao-principal">
-                        Ver Crianças
-                    </button>
-
-                </div>  
-
-                <div class="cartao-campanha" onclick= "window.location.href='natal.html'">
-                    
-                    <img src="/imagens/natal solidario.jpg" alt="Acampamento" class="imagem-campanha">
-
-                    <p>
-                        Demonstre o amor de Cristo através de um gesto de generosidade. Seu presente pode levar alegria, esperança e mostrar a uma criança que ela é amada e lembrada por Deus.
-                    </p>
-
-                    <button class="botao-principal">
-                        Ver Crianças
-                    </button>
-
-                </div> 
-
-            </div>
-
-        </section>
--->
-
-        <!-- INFORMAÇÕES INSTITUCIONAIS -->
-<!--
-        <section class="secao-informacoes">
-
-            <div class="container grade-cartoes">
-
-                <div class="cartao-informacao">
-
-                    <h3>Missão</h3>
-
-                    <p>
-                        Expandir o Reino, levando educação, apoio emocional e recursos básicos para crianças carentes da comunidade, 
-                        promovendo a transformação positiva na vida das crianças e suas famílias.
-                    </p>
-
-                </div>
-
-                <div class="cartao-informacao">
-
-                    <h3>Visão</h3>
-
-                    <p>
-                        Compartilhar amor, esperança e conhecimento, ajudando a salvar uma criança hoje 
-                        e transformar comunidades inteiras no futuro.
-                    </p>
-
-                </div>
-
-                <div class="cartao-informacao">
-
-                    <h3>Valores</h3>
-
-                    <p>
-                        Expansão do Reino de Deus Amor, como ferramenta de transformação Educação, conhecimento e dedicação, 
-                        como base para construção de um futuro digno
-                    </p>
-
-                </div>
-
-            </div>
-
-            
-
-        </section>
- -->
     </main>
+
+    <!-- MODAL CRIANÇA -->
+        <div id="modal-crianca" class="modal hidden">
+
+            <div class="modal-conteudo">
+
+                <button class="fechar-modal" id="fechar-modal">
+                    ✕
+                </button>
+
+                <img id="modal-foto" class="modal-foto" src="" alt="Foto da criança">
+
+                <h2 id="modal-nome"></h2>
+
+                <p id="modal-idade"></p>             
+
+                <div class="modal-tamanhos">
+                    <p><strong>👕 Blusa:</strong> <span id="modal-blusa"></span></p>
+                    <p><strong>👖 Calça:</strong> <span id="modal-calca"></span></p>
+                    <p><strong>👟 Calçado:</strong> <span id="modal-calcado"></span></p>
+                </div>
+
+                <div class="modal-texto-crianca">
+                    <h3>Mensagem da Criança</h3>
+                    <p id="modal-texto-crianca"></p>
+                </div>
+
+                <p id="modal-descricao"></p>
+
+                <div class="modal-botoes">
+
+                    <button id="btn-apadrinhar" class="btn-apadrinhar">
+                        Quero Apadrinhar
+                    </button>
+
+                </div>
+
+        </div>
+
+    </div>
 
 </body>
 

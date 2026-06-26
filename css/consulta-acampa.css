@@ -1,0 +1,221 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    color: #1f2937;
+}
+
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* ======================
+   LOGO
+====================== */
+
+.logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.95;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.15));
+}
+
+/* ======================
+   TÍTULOS
+====================== */
+
+h1 {
+    color: #193875;
+    margin-bottom: 10px;
+}
+
+.sub {
+    color: #6b7280;
+    margin-bottom: 25px;
+}
+
+/* ======================
+   BOTÃO VOLTAR
+====================== */
+
+.btn-voltar {
+    background: transparent;
+    border: 1px solid #d1d5db;
+    color: #193875;
+    padding: 8px 12px;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    margin-bottom: 15px;
+}
+
+.btn-voltar:hover {
+    background: #193875;
+    color: white;
+    border-color: #193875;
+}
+
+/* ======================
+   BUSCA
+====================== */
+
+.busca {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.busca input {
+    padding: 10px;
+    width: 260px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    outline: none;
+}
+
+.busca button {
+    padding: 10px 15px;
+    border: none;
+    background: #193875;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.busca button:hover {
+    background: #2f6fed;
+}
+
+/* ======================
+   CARD PRINCIPAL
+====================== */
+
+.card {
+    background: white;
+    border-radius: 14px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 700px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    text-align: left;
+}
+
+/* ======================
+   HEADER DA CRIANÇA
+====================== */
+
+.card-header {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.card-header img {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.card-header h2 {
+    margin: 0;
+    color: #111827;
+}
+
+/* ======================
+   SEÇÕES
+====================== */
+
+.section-title {
+    font-size: 13px;
+    font-weight: bold;
+    color: #193875;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+/* ======================
+   ROW (NOVO ESTILO LIMPO)
+====================== */
+
+.row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    padding: 10px 12px;
+    background: #f9fafb;
+    border-radius: 10px;
+
+    margin-bottom: 10px;
+}
+
+/* label */
+.row span:first-child {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* valor */
+.row span:last-child {
+    font-size: 15px;
+    color: #111827;
+    font-weight: 500;
+}
+
+/* hover suave */
+.row:hover {
+    background: #eef2ff;
+    transition: 0.2s;
+}
+
+/* ======================
+   DIVISOR
+====================== */
+
+.divisor {
+    height: 1px;
+    background: #e5e7eb;
+    margin: 15px 0;
+}
+
+/* ======================
+   STATUS TAG
+====================== */
+
+.tag {
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.tag.pendente {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.tag.entregue {
+    background: #d1fae5;
+    color: #065f46;
+}

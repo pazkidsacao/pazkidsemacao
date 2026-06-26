@@ -2,7 +2,28 @@ import { supabase } from "./supabase.js";
 
 const grid = document.getElementById("grid-criancas");
 
-// 🔢 cálculo de idade
+let criancaSelecionada = null;
+
+// ======================
+// CACHE ELEMENTOS
+// ======================
+
+const modal = document.getElementById("modal-crianca");
+const fecharModal = document.getElementById("fechar-modal");
+
+const modalFoto = document.getElementById("modal-foto");
+const modalNome = document.getElementById("modal-nome");
+const modalIdade = document.getElementById("modal-idade");
+
+const modalBlusa = document.getElementById("modal-blusa");
+const modalCalca = document.getElementById("modal-calca");
+const modalCalcado = document.getElementById("modal-calcado");
+const modalTextoCrianca = document.getElementById("modal-texto-crianca");
+
+// ======================
+// IDADE
+// ======================
+
 function calcularIdade(dataNascimento) {
 
     const hoje = new Date();
@@ -19,85 +40,207 @@ function calcularIdade(dataNascimento) {
     return idade;
 }
 
-// 🖼️ monta URL da imagem com segurança
+// ======================
+// FOTO
+// ======================
+
 function montarFoto(c) {
 
-    const baseURL = "https://tcsgtzdmfzcqlaagnlcr.supabase.co/storage/v1/object/public/fotos-criancas/";
+    const baseURL =
+        "https://tcsgtzdmfzcqlaagnlcr.supabase.co/storage/v1/object/public/fotos-criancas/";
 
-    // se não tem foto → default
     if (!c.foto_url || c.foto_url.trim() === "") {
         return "/imagens/default.png";
     }
 
-    // se já for URL completa
     if (c.foto_url.startsWith("http")) {
         return c.foto_url;
     }
 
-    // caso padrão Supabase
     return baseURL + c.foto_url;
 }
 
-// 🚀 carregar crianças
+// ======================
+// CARREGAR CRIANÇAS
+// ======================
+
 async function carregarCriancas() {
 
-    console.log("🔄 carregando crianças...");
-
     const { data, error } = await supabase
-        .from("criancas")
-        .select("*");
+        .from("acampakids2026")
+        .select("*")
+        .eq("apadrinhado", false);
 
-    console.log("📦 DATA:", data);
-    console.log("❌ ERROR:", error);
+    console.log("Dados recebidos:", data);
 
     if (error) {
-        console.log("Erro ao buscar crianças:", error);
+        console.log(error);
         return;
     }
 
     if (!data || data.length === 0) {
-        grid.innerHTML = "<p>Nenhuma criança encontrada</p>";
+        grid.innerHTML = "<p>Nenhuma criança encontrada.</p>";
         return;
     }
 
-    grid.innerHTML = "";
+    let html = "";
 
-    data.forEach(c => {
-
-        console.log("🧒 criando card:", c.nome);
-        console.log("FOTO_URL:", c.foto_url);
-
-        const card = document.createElement("div");
-        card.classList.add("card-crianca");
+    data.forEach((c, index) => {
 
         const foto = montarFoto(c);
 
-        console.log("URL FINAL:", foto);
+        html += `
+            <div class="card-crianca" data-index="${index}">
+                <img
+                    class="card-img"
+                    src="${foto}"
+                    alt="${c.nome}"
+                >
 
-        card.innerHTML = `
-            <img 
-                src="${foto}" 
-                alt="${c.nome}"
-                onerror="this.src='/imagens/default.png'"
-            >
-
-            <div class="overlay">
-                <h3>${c.nome}</h3>
-                <p>${calcularIdade(c.data_nascimento)} anos</p>
-                <p>Clique para ver mais</p>
+                <div class="overlay">
+                    <h3>${c.nome}</h3>
+                    <p>Clique para ver mais</p>
+                </div>
             </div>
         `;
-
-        // clique futuro (modal de apadrinhamento)
-        card.addEventListener("click", () => {
-            console.log("clicou na criança:", c.id);
-        });
-
-        grid.appendChild(card);
     });
 
-    console.log("✅ renderização finalizada");
+    grid.innerHTML = html;
+
+    // ======================
+    // IMAGEM DEFAULT
+    // ======================
+
+    grid.querySelectorAll(".card-img").forEach(img => {
+
+        img.addEventListener("error", () => {
+
+            if (img.dataset.fallback) return;
+
+            img.dataset.fallback = "true";
+
+            img.classList.add("img-default");
+
+            img.src = "/imagens/default.png";
+        });
+
+    });
+
+    // ======================
+    // EVENTOS DOS CARDS
+    // ======================
+
+    const cards = grid.querySelectorAll(".card-crianca");
+
+    cards.forEach((card, index) => {
+
+        card.addEventListener("click", () => {
+
+            console.log("Card clicado:");
+
+            console.log(data[index]);
+
+            abrirModal(data[index]);
+
+        });
+
+    });
+
 }
 
-// inicia
+// ======================
+// ABRIR MODAL
+// ======================
+
+function abrirModal(c) {
+
+    console.log("Objeto recebido no modal:");
+
+    console.log(c);
+
+    criancaSelecionada = c;
+
+    modalFoto.src = montarFoto(c);
+
+    modalNome.textContent = c.nome;
+
+    modalIdade.textContent =
+        c.data_nascimento
+            ? `${calcularIdade(c.data_nascimento)} anos`
+            : "";
+
+    modalBlusa.textContent = c.tamanho_blusa || "-";
+    modalCalca.textContent = c.tamanho_calca || "-";
+    modalCalcado.textContent = c.tamanho_calcado || "-";
+
+    modalTextoCrianca.textContent =
+        c.texto_crianca ||
+        "Essa criança ainda não deixou uma mensagem 💙";
+
+    modal.classList.remove("hidden");
+}
+
+// ======================
+// FECHAR
+// ======================
+
+fecharModal.addEventListener("click", () => {
+
+    modal.classList.add("hidden");
+
+});
+
+// ======================
+// APADRINHAR
+// ======================
+
+document.getElementById("btn-apadrinhar").addEventListener("click", () => {
+
+    console.log("Botão clicado");
+
+    console.log("Crianca selecionada:");
+
+    console.log(criancaSelecionada);
+
+    if (!criancaSelecionada) {
+
+        alert("Nenhuma criança selecionada.");
+
+        return;
+    }
+
+    console.log("crianca_id =", criancaSelecionada.crianca_id);
+
+    const url =
+        "/pages/apadrinhar.html?id=" + criancaSelecionada.crianca_id;
+
+    console.log("Redirecionando para:");
+
+    console.log(url);
+
+    console.log("OBJETO:", criancaSelecionada);
+console.log("CRIANCA_ID:", criancaSelecionada.crianca_id);
+console.log("URL:", "/pages/apadrinhar.html?id=" + criancaSelecionada.crianca_id);
+
+    window.location.href = url;
+
+});
+
+
+
+// ======================
+// ABRIR PAGINA DE ACOMPANHAMENTO
+// ======================
+const btn = document.querySelector(".btn-acompanhamento");
+
+if (btn) {
+    btn.addEventListener("click", () => {
+        window.location.href = "/pages/consulta-acampa.html";
+    });
+}
+
+// ======================
+// INIT
+// ======================
+
 carregarCriancas();

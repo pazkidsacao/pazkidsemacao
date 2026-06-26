@@ -14,7 +14,7 @@ const id = params.get("id");
 
 window.voltar = function () {
 
-    window.location.href = "admin.html";
+    window.location.href = "cadastro.html";
 
 };
 
@@ -192,7 +192,7 @@ window.atualizarCrianca = async function () {
             document.getElementById("nome").value,
 
         data_nascimento:
-            document.getElementById("nascimento").value,
+            document.getElementById("nascimento").value || null,
 
         sexo:
             document.getElementById("sexo").value,
@@ -268,6 +268,6 @@ window.atualizarCrianca = async function () {
 
     alert("Dados atualizados com sucesso!");
 
-    window.location.href = "admin.html";
+    window.location.href = "cadastro.html";
 
 };

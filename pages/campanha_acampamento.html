@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Campanha Acampamento 2026</title>
+
+    <link rel="stylesheet" href="../css/campanha_acampamento.css">
+
+</head>
+
+<body>
+
+    <header class="cabecalho">
+
+        <div class="logo-titulo">
+
+            <img src="/imagens/pazAcao.png" class="logo">
+
+            <div>
+                <h1>Campanha Acampamento 2026</h1>
+                <p>Painel de acompanhamento da campanha</p>
+            </div>
+
+        </div>
+
+        <button id="btn-voltar" class="botao-voltar">
+            ← Voltar
+        </button>
+
+    </header>
+
+    <main class="conteudo">
+
+        <!-- DASHBOARD -->
+
+        <section class="dashboard">
+
+            <div class="card-info">
+                <h3>Total</h3>
+                <span id="total">0</span>
+            </div>
+
+            <div class="card-info">
+                <h3>Não Apadrinhadas</h3>
+                <span id="naoApadrinhadas">0</span>
+            </div>
+
+            <div class="card-info">
+                <h3>Apadrinhadas</h3>
+                <span id="apadrinhadas">0</span>
+            </div>
+
+            <div class="card-info">
+                <h3>% Apadrinhado</h3>
+                <span id="percApadrinhadas">0%</span>
+            </div>
+
+            <div class="card-info">
+                <h3>Entrega Pendente</h3>
+                <span id="pendentes">0</span>
+            </div>
+
+            <div class="card-info">
+                <h3>Entregues</h3>
+                <span id="entregues">0</span>
+            </div>
+
+            <div class="card-info">
+                <h3>% Concluído</h3>
+                <span id="percEntregues">0%</span>
+            </div>
+
+        </section>
+
+        <!-- BUSCA -->
+
+        <section class="busca">
+
+            <input
+                type="text"
+                id="busca"
+                placeholder="Buscar por criança, padrinho, CPF ou campus">
+
+        </section>
+
+        <!-- TABELA -->
+
+        <section class="tabela-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Foto</th>
+                        <th>Criança</th>
+                        <th>Padrinho</th>
+                        <th>Telefone</th>
+                        <th>Campus</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="listaCampanha">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <script type="module" src="../js/campanha_acampamento.js"></script>
+
+</body>
+
+</html>

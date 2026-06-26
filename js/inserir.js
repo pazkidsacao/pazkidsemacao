@@ -3,7 +3,7 @@ import { supabase } from "./supabase.js";
 
 // voltar para admin
 window.voltar = function () {
-    window.location.href = "admin.html";
+    window.location.href = "cadastro.html";
 };
 
 
@@ -110,5 +110,5 @@ window.salvarCrianca = async function () {
 
     alert("Criança cadastrada com sucesso!");
 
-    window.location.href = "admin.html";
+    window.location.href = "acadastro.html";
 };
