@@ -100,6 +100,39 @@ body{
 
 
 /* =========================================
+   ÁREA DO BOTÃO VOLTAR
+========================================= */
+
+.area-voltar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+}
+
+/* =========================================
+   BOTÃO VOLTAR
+========================================= */
+
+.btn-voltar {
+    background: transparent;
+    border: none;
+    color: #64748b;
+    padding: 6px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color .2s ease;
+}
+
+.btn-voltar:hover {
+    color: #022050;
+}
+
+.btn-voltar:active {
+    opacity: .7;
+}
+
+/* =========================================
    BOTÃO ACOMPANHAMENTO
 ========================================= */
 
@@ -171,11 +204,8 @@ body{
 
     display:grid;
     grid-template-columns:repeat(8,150px);
-
     gap:5px;
-
     justify-content:center;
-
     min-width:950px;
 
 }
@@ -494,6 +524,7 @@ body{
     }
 
     .grid-criancas{
+        margin-left: 30px;        
         grid-template-columns:repeat(4,100px);
         gap:4px;
         min-width:unset;

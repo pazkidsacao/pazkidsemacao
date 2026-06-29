@@ -43,17 +43,11 @@ body{
 
     background:white;
     color:#022050;
-
     border:none;
-
     padding:12px 20px;
-
     border-radius:10px;
-
     cursor:pointer;
-
     font-weight:bold;
-
 }
 
 .conteudo{
@@ -77,14 +71,10 @@ body{
 .card-info{
 
     background:white;
-
     border-radius:12px;
-
     padding:20px;
-
     align-items: center;
     text-align: center;
-
     box-shadow:0 4px 10px rgba(0,0,0,.08);
 
 }
@@ -92,9 +82,7 @@ body{
 .card-info h3{
 
     font-size:14px;
-
     color:#6b7280;
-
     margin-bottom:10px;
 
 }
@@ -102,9 +90,7 @@ body{
 .card-info span{
 
     font-size:30px;
-
     font-weight:bold;
-
     color:#022050;
 
 }
@@ -118,13 +104,9 @@ body{
 .busca input{
 
     width:100%;
-
     max-width:450px;
-
     padding:12px;
-
     border-radius:10px;
-
     border:1px solid #ddd;
 
 }
@@ -132,11 +114,8 @@ body{
 .tabela-container{
 
     background:white;
-
     border-radius:12px;
-
     overflow:auto;
-
     box-shadow:0 4px 10px rgba(0,0,0,.08);
 
 }
