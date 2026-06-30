@@ -110,5 +110,5 @@ window.salvarCrianca = async function () {
 
     alert("Criança cadastrada com sucesso!");
 
-    window.location.href = "acadastro.html";
+    window.location.href = "cadastro.html";
 };
