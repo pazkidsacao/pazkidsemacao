@@ -186,7 +186,8 @@ function salvarDados(){
 
 function abrirPagamento(){
 
-    window.location.href = "/pages/pagto-acampa.html";
+   // window.location.href = "/pages/pagto-acampa.html";
+    window.location.href = "/pagamento";
 
 }
 
