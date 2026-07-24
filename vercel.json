@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/acampa",
+      "destination": "/pages/acampa.html"
+    },
+    {
+      "source": "/pagamento",
+      "destination": "/pages/pagto-acampa.html"
+    },
+    {
+      "source": "/natal",
+      "destination": "/pages/natal.html"
+    },
+    {
+      "source": "/acompanhamento",
+      "destination": "/pages/acompanhamento.html"
+    }
+  ]
+}
