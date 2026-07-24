@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Acampa Paz Kids 2026</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="/css/acampa.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="secao-principal">
+
+        <div class="camada-escura">
+
+            <div class="container conteudo-principal">
+
+                <img
+                    src="/imagens/pazAcao.png"
+                    alt="Logo Paz Kids em Ação"
+                    id="logo">
+
+                <div class="area-texto">
+
+                    <p class="slogan">
+                        Alcançando Além das Quatro Paredes
+                    </p>
+
+                    <p class="descricao">
+                        Levando amor, esperança e transformação para crianças e comunidades através do evangelho.
+                    </p>
+
+                    <!-- <div class="area-voltar">
+                        <button class="btn-voltar">
+                            ← Voltar
+                        </button>
+                    </div> -->
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main>
+
+        <!-- APRESENTAÇÃO -->
+
+        <section class="dados-acampa">
+
+            <div class="container-acampa">
+
+                <img
+                    src="/imagens/acampakids.jpg"
+                    alt="Acampamento"
+                    class="imagem-acampa">
+
+                <div class="conteudo-acampa">
+
+                    <h2 class="titulo-acampa">
+                        Apadrinhe uma inscrição
+                    </h2>
+
+                    <p class="texto-acampa-paragrafo">
+                        O Acampa Kids proporciona dias de diversão, aprendizado e um encontro transformador com Jesus.
+                    </p>
+
+                    
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FORMULÁRIO -->
+
+        <section class="area-apadrinhamento">
+
+            <div class="card-apadrinhamento">
+
+             <!--    <h2>
+                    Quero apadrinhar
+                </h2>
+            -->
+                <p class="texto-apoio">
+                    Ajude uma criança a viver dias inesquecíveis com Jesus.
+                </p>
+
+                <div class="valor-inscricao">
+
+                    <h1 id="valor-unitario">
+                        R$ 250,00
+                    </h1>
+
+                    <span class="texto-apoio">
+                        por inscrição
+                    </span>
+
+                </div>
+
+                
+
+                <div class="quantidade">
+
+                    <label>
+                        Quantidade de inscrições
+                    </label>
+
+                    <div class="controle">
+
+                        <button id="menos">
+                            −
+                        </button>
+
+                        <span id="quantidade">
+                            1
+                        </span>
+
+                        <button id="mais">
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="total">
+
+                    <span>Total</span>
+
+                    <strong id="valor-total">
+                        R$ 250,00
+                    </strong>
+
+                </div>
+
+                <hr>
+
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Nome completo">
+
+                <input
+                    type="text"
+                    id="telefone"
+                    placeholder="Telefone">
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="E-mail (opcional)">
+
+                <select id="campus">
+
+                    <option value="">
+                        Selecione seu campus
+                    </option>
+
+                    <option>Anália Franco</option>
+                    <option>Eldorado</option>
+                    <option>Guarulhos</option>
+                    <option>São Caetano</option>
+                    <option>Online</option>
+                    <option>Outros</option>
+
+                </select>
+
+                <button
+                    id="btn-apadrinhar"
+                    class="btn-apadrinhar">
+
+                    Apadrinhar
+
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script type="module" src="/js/acampa.js"></script>
+
+</body>
+
+</html>

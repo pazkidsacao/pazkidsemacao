@@ -1,0 +1,510 @@
+/* ==========================================================
+   RESET
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fa;
+    color:#333;
+    line-height:1.4;
+
+}
+
+img{
+
+    display:block;
+    max-width:100%;
+    height:auto;
+
+}
+
+
+/* ==========================================================
+   CABEÇALHO
+========================================================== */
+
+.secao-principal{
+
+    background:linear-gradient(135deg,#2E0550,#4b0d82);
+
+}
+
+.camada-escura{
+
+    background:rgba(46,5,80,.80);
+    padding:30px 10px;
+
+}
+
+.container{
+
+    max-width:1200px;
+    margin:auto;
+
+}
+
+.conteudo-principal{
+
+    display:flex;
+    align-items:center;
+    gap:50px;
+
+}
+
+#logo{
+
+    width:100px;
+
+}
+
+.area-texto{
+
+    color:#fff;
+
+}
+
+.slogan{
+
+    font-size:2.2rem;
+    font-weight:bold;
+    margin-bottom:20px;
+
+}
+
+.descricao{
+
+    font-size:1.1rem;
+    max-width:650px;
+
+}
+
+.area-voltar{
+
+    margin-top:30px;
+
+}
+
+.btn-voltar{
+
+    background:#fff;
+    color:#004aad;
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+
+    transition:.25s;
+
+}
+
+.btn-voltar:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+/* ==========================================================
+   APRESENTAÇÃO
+========================================================== */
+
+.dados-acampa{
+
+    padding:70px 20px;
+
+}
+
+.container-acampa{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+
+    gap:45px;
+
+}
+
+.imagem-acampa{
+
+    width:250px;
+    height:250px;
+
+    object-fit:cover;
+
+    border-radius:18px;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.18);
+
+}
+
+.conteudo-acampa{
+
+    flex:1;
+
+}
+
+.titulo-acampa{
+
+    color:#004aad;
+
+    font-size:2rem;
+
+    margin-bottom:25px;
+
+}
+
+.texto-acampa-paragrafo{
+
+    color:#555;
+
+    font-size:1rem;
+
+    margin-bottom:18px;
+
+}/* ==========================================================
+   CARD DE APADRINHAMENTO
+========================================================== */
+
+.area-apadrinhamento{
+
+    padding:20px 20px 70px;
+
+}
+
+.card-apadrinhamento{
+
+    max-width:650px;
+
+    margin:auto;
+
+    padding:40px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.10);
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+}
+
+
+/* ==========================================================
+   TEXTO
+========================================================== */
+
+.card-apadrinhamento h2{
+
+    color:#004aad;
+    text-align:center;
+
+    margin-bottom:15px;
+
+}
+
+.texto-apoio{
+
+    text-align:center;
+
+    color:#777;
+
+    margin-bottom:10px;
+
+}
+
+
+/* ==========================================================
+   VALOR
+========================================================== */
+
+.valor-inscricao{
+
+    display:flex;
+
+    align-items:baseline;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-bottom:30px;
+
+}
+
+#valor-unitario{
+
+    color:#28a745;
+
+    font-size:2rem;
+
+    margin:0;
+
+}
+
+.valor-inscricao .texto-apoio{
+
+    margin:0;
+
+    color:#777;
+
+    font-size:1rem;
+
+}
+
+
+/* ==========================================================
+   QUANTIDADE
+========================================================== */
+
+.quantidade{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+.quantidade label{
+
+    display:block;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+
+}
+
+.controle{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.controle button{
+
+    width:48px;
+    height:48px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#004aad;
+
+    color:#fff;
+
+    font-size:1.2rem;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.controle button:hover{
+
+    background:#00337d;
+
+    transform:scale(1.08);
+
+}
+
+#quantidade{
+
+    width:40px;
+
+    text-align:center;
+
+    font-size:1.5rem;
+
+    font-weight:bold;
+
+}
+
+
+/* ==========================================================
+   TOTAL
+========================================================== */
+
+.total{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:baseline;
+
+    gap:10px;
+
+    margin:30px 0;
+
+    width:100%;
+
+    text-align:center;
+
+}
+
+.total span{
+
+    color:#555;
+
+    font-size:1.15rem;
+
+}
+
+.total strong{
+
+    color:#28a745;
+
+    font-size:1.5rem;
+
+}
+
+hr{
+
+    width:100%;
+
+    margin:30px 0;
+
+    border:none;
+
+    border-top:1px solid #ddd;
+
+}
+
+/* ==========================================================
+   FORMULÁRIO
+========================================================== */
+
+.card-apadrinhamento input,
+.card-apadrinhamento select{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:18px;
+
+    border:1px solid #ccc;
+
+    border-radius:10px;
+
+    font-size:1rem;
+
+    transition:.25s;
+
+}
+
+.card-apadrinhamento input:focus,
+.card-apadrinhamento select:focus{
+
+    outline:none;
+
+    border-color:#004aad;
+
+    box-shadow:0 0 8px rgba(0,74,173,.20);
+
+}
+
+
+/* ==========================================================
+   BOTÃO
+========================================================== */
+
+.btn-apadrinhar{
+
+    width:100%;
+
+    margin-top:10px;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#260255;
+
+    color:#fff;
+
+    font-size:1.1rem;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.btn-apadrinhar:hover{
+
+    background:#7c66bb;
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 768px) {
+
+    .conteudo-principal {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .container-acampa {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .card-apadrinhamento {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .imagem-acampa {
+        width: 220px;
+        height: 220px;
+        margin: 0 auto;
+    }
+
+    .slogan {
+        font-size: 1.5rem;
+    }
+
+    .titulo-acampa {
+        font-size: 1.6rem;
+    }
+
+}

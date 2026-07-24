@@ -51,48 +51,188 @@ form {
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
-/* GRID CAMPOS */
+/* =========================================
+GRID DO FORMULÁRIO
+========================================= */
 
 .grid {
+
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 18px 24px;
+
+    margin-bottom: 20px;
+
 }
 
-/* INPUTS */
+/* =========================================
+CAMPO
+========================================= */
 
-input, textarea {
-    padding: 10px;
+.campo {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+/* =========================================
+LABEL
+========================================= */
+
+.campo label {
+
+    margin-bottom: 6px;
+
+    font-size: 0.90rem;
+
+    font-weight: 600;
+
+    color: #374151;
+
+}
+
+/* =========================================
+INPUTS / SELECT / TEXTAREA
+========================================= */
+
+.campo input,
+.campo select,
+.campo textarea {
+
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #d1d5db;
+
     border-radius: 8px;
 
-    border: 1px solid #ccc;
+    background: #fff;
+
+    font-size: 0.95rem;
+
+    font-family: inherit;
+
+    color: #1f2937;
+
+    transition: .2s;
+
+}
+
+/* =========================================
+FOCUS
+========================================= */
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
 
     outline: none;
+
+    border-color: #193875;
+
+    box-shadow: 0 0 0 3px rgba(25,56,117,.15);
+
 }
 
-textarea {
-    width: 100%;
-    margin-top: 15px;
-    height: 120px;
-    resize: none;
+/* =========================================
+TEXTAREA
+========================================= */
+
+.campo textarea {
+
+    min-height: 140px;
+
+    resize: vertical;
+
 }
 
-/* BOTÃO */
+/* =========================================
+INPUT FILE
+========================================= */
 
-button {
-    margin-top: 20px;
+.campo input[type="file"] {
 
-    background-color: #16a34a;
-    color: white;
+    padding: 10px;
 
-    border: none;
-    padding: 12px 20px;
-
-    border-radius: 10px;
+    border-style: dashed;
 
     cursor: pointer;
+
+}
+
+/* =========================================
+BOTÃO
+========================================= */
+
+button {
+
+    margin-top: 10px;
+
+    padding: 14px;
+
+    width: auto;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #16a34a;
+
+    color: #fff;
+
+    font-size: 1rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .2s;
+
 }
 
 button:hover {
-    background-color: #12823a;
+
+    background: #12833b;
+
+}
+
+button:active {
+
+    transform: scale(.98);
+
+}
+
+/* =========================================
+RESPONSIVO
+========================================= */
+
+@media (max-width: 768px) {
+
+    .grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+
+    }
+
+    .campo label {
+
+        font-size: .88rem;
+
+    }
+
+    .campo input,
+    .campo select,
+    .campo textarea {
+
+        font-size: 16px; /* evita zoom automático no iPhone */
+
+    }
+
 }

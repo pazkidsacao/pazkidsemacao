@@ -20,52 +20,106 @@
     </header>
 
     <main class="container">
-
         <form id="form-crianca">
 
             <div class="grid">
 
-                <input type="text" id="nome" placeholder="Nome completo">
-                <input type="date" id="nascimento">
-                <select id="sexo">
-                    <option value="" disabled selected>Sexo</option>
-                    <option value="Feminino">Feminino</option>
-                    <option value="Masculino">Masculino</option>
-                </select>
-                <input type="text" id="responsavel" placeholder="Nome do responsável">
-                <input type="text" id="telefone" placeholder="Telefone">
-                <input type="text" id="endereco" placeholder="Endereço">
-                
+                <div class="campo">
+                    <label for="nome">Nome completo</label>
+                    <input type="text" id="nome" placeholder="Nome completo">
+                </div>
 
-               
-                <input type="text" id="serie" placeholder="Série escolar">
-                
-                <select id="irmaos">
-                    <option value="" disabled selected>Possui irmãos?</option>
-                    <option value="Sim">Sim</option>
-                    <option value="Não">Não</option>
-                </select>
-                
-                <input type="number" id="qtd_irmaos" placeholder="Quantidade de irmãos">
+                <div class="campo">
+                    <label for="nascimento">Data de nascimento</label>
+                    <input type="date" id="nascimento">
+                </div>
 
-                <input type="text" id="blusa" placeholder="Tamanho da blusa">
-                <input type="text" id="calca" placeholder="Tamanho da calça">
-                <input type="number" id="calcado" placeholder="Tamanho do calçado">
+                <div class="campo">
+                    <label for="sexo">Sexo</label>
+                    <select id="sexo">
+                        <option value="" disabled selected>Sexo</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="Masculino">Masculino</option>
+                    </select>
+                </div>
 
-                <input type="text" id="hobby" placeholder="Hobby">
-                <input type="text" id="religiao" placeholder="Religião da família">
+                <div class="campo">
+                    <label for="responsavel">Responsável</label>
+                    <input type="text" id="responsavel" placeholder="Nome do responsável">
+                </div>
+
+                <div class="campo">
+                    <label for="telefone">Telefone</label>
+                    <input type="text" id="telefone" placeholder="Telefone">
+                </div>
+
+                <div class="campo">
+                    <label for="endereco">Endereço</label>
+                    <input type="text" id="endereco" placeholder="Endereço">
+                </div>
+
+                <div class="campo">
+                    <label for="serie">Série escolar</label>
+                    <input type="text" id="serie" placeholder="Série escolar">
+                </div>
+
+                <div class="campo">
+                    <label for="irmaos">Possui irmãos?</label>
+                    <select id="irmaos">
+                        <option value="" disabled selected>Selecione...</option>
+                        <option value="Sim">Sim</option>
+                        <option value="Não">Não</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="qtd_irmaos">Quantidade de irmãos</label>
+                    <input type="number" id="qtd_irmaos" placeholder="Quantidade de irmãos">
+                </div>
+
+                <div class="campo">
+                    <label for="blusa">Tamanho da blusa / camiseta</label>
+                    <input type="text" id="blusa" placeholder="Tamanho da blusa">
+                </div>
+
+                <div class="campo">
+                    <label for="calca">Tamanho da calça</label>
+                    <input type="text" id="calca" placeholder="Tamanho da calça">
+                </div>
+
+                <div class="campo">
+                    <label for="calcado">Tamanho do calçado</label>
+                    <input type="number" id="calcado" placeholder="Tamanho do calçado">
+                </div>
+
+                <div class="campo">
+                    <label for="hobby">Hobby</label>
+                    <input type="text" id="hobby" placeholder="Hobby">
+                </div>
+
+                <div class="campo">
+                    <label for="religiao">Religião da família</label>
+                    <input type="text" id="religiao" placeholder="Religião da família">
+                </div>
 
             </div>
 
-            <textarea id="observacoes" placeholder="Observações"></textarea>
+            <div class="campo">
+                <label for="observacoes">Observações</label>
+                <textarea id="observacoes" placeholder="Observações"></textarea>
+            </div>
 
-            <input type="file" id="foto">
+            <div class="campo">
+                <label for="foto">Foto</label>
+                <input type="file" id="foto">
+            </div>
 
             <button type="button" onclick="salvarCrianca()">
                 Salvar Criança
             </button>
 
         </form>
+       
 
     </main>
 

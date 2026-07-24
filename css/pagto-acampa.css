@@ -1,0 +1,789 @@
+/* ==========================================================
+   RESET
+========================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:#f5f7fa;
+
+    color:#333;
+
+    line-height:1.4;
+
+}
+
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+    height:auto;
+
+}
+
+
+
+/* ==========================================================
+   CABEÇALHO
+========================================================== */
+
+
+.secao-principal{
+
+    background:linear-gradient(135deg,#2E0550,#4b0d82);
+
+}
+
+
+.camada-escura{
+
+    background:rgba(46,5,80,.80);
+
+    padding:30px 10px;
+
+}
+
+
+.container{
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+
+.conteudo-principal{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:50px;
+
+}
+
+
+#logo{
+
+    width:100px;
+
+}
+
+
+.area-texto{
+
+    color:white;
+
+}
+
+
+.slogan{
+
+    font-size:2.2rem;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+
+}
+
+
+.descricao{
+
+    font-size:1.1rem;
+
+    max-width:650px;
+
+}
+
+
+
+/* ==========================================================
+   PAGAMENTO
+========================================================== */
+
+
+.pagamento{
+
+    padding:60px 20px;
+
+}
+
+
+
+.card-pagamento{
+
+
+    max-width:650px;
+
+    margin:auto;
+
+
+    background:#fff;
+
+
+    border-radius:18px;
+
+
+    padding:40px;
+
+
+    box-shadow:0 15px 40px rgba(0,0,0,.10);
+
+
+    text-align:center;
+
+
+}
+
+
+
+.card-pagamento h1{
+
+
+    color:#260255;
+
+
+    font-size:2rem;
+
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+.texto{
+
+
+    color:#777;
+
+
+    margin-bottom:30px;
+
+
+}
+
+
+
+/* ==========================================================
+   RESUMO
+========================================================== */
+
+
+.resumo{
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:18px;
+
+
+}
+
+
+
+.linha{
+
+
+    display:flex;
+
+
+    justify-content:space-between;
+
+
+    align-items:center;
+
+
+}
+
+
+
+.linha span{
+
+
+    color:#666;
+
+
+}
+
+
+
+.linha strong{
+
+
+    color:#333;
+
+
+}
+
+
+
+.total{
+
+
+    margin-top:10px;
+
+
+    padding-top:20px;
+
+
+    border-top:1px solid #ddd;
+
+
+}
+
+
+
+.total span{
+
+
+    font-size:1.15rem;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+.total strong{
+
+
+    color:#28a745;
+
+
+    font-size:1.5rem;
+
+
+}
+
+
+
+
+hr{
+
+
+    width:100%;
+
+
+    margin:30px 0;
+
+
+    border:none;
+
+
+    border-top:1px solid #ddd;
+
+
+}
+
+
+
+
+/* ==========================================================
+   OPÇÕES PAGAMENTO
+========================================================== */
+
+
+.card-pagamento h2{
+
+
+    color:#260255;
+
+
+    font-size:1.3rem;
+
+
+    margin-bottom:20px;
+
+
+}
+
+
+
+.opcoes{
+
+
+    display:flex;
+
+
+    gap:15px;
+
+
+    margin-bottom:30px;
+
+
+}
+
+
+
+.opcao{
+
+
+    flex:1;
+
+
+    padding:15px;
+
+
+    border-radius:12px;
+
+
+    border:2px solid #ddd;
+
+
+    background:white;
+
+
+    cursor:pointer;
+
+
+    font-size:1rem;
+
+
+    font-weight:bold;
+
+
+    transition:.25s;
+
+
+}
+
+
+
+.opcao:hover{
+
+
+    border-color:#260255;
+
+
+}
+
+
+
+.opcao.ativa{
+
+
+    background:#260255;
+
+
+    color:white;
+
+
+    border-color:#260255;
+
+
+}
+
+
+
+
+/* ==========================================================
+   ÁREA PIX / CARTÃO
+========================================================== */
+
+
+.area-pagamento{
+
+
+    animation:aparecer .3s ease;
+
+
+}
+
+
+
+.area-pagamento h3{
+
+
+    color:#004aad;
+
+
+    margin-bottom:20px;
+
+
+    font-size:1.3rem;
+
+
+}
+
+
+
+.qrcode{
+
+
+    width:220px;
+
+
+    height:220px;
+
+
+    object-fit:contain;
+
+
+    margin:20px auto;
+
+
+}
+
+
+
+
+.chave-pix{
+
+
+    display:flex;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    gap:10px;
+
+
+    margin:15px 0;
+
+
+}
+
+
+
+.chave-pix span{
+
+
+    background:#f1f1f1;
+
+
+    padding:12px;
+
+
+    border-radius:8px;
+
+
+    word-break:break-all;
+
+
+    color:#555;
+
+
+}
+
+
+
+
+.chave-pix button{
+
+
+    border:none;
+
+
+    background:#004aad;
+
+
+    color:white;
+
+
+    padding:12px 18px;
+
+
+    border-radius:8px;
+
+
+    cursor:pointer;
+
+
+    font-weight:bold;
+
+
+}
+
+
+
+
+.aviso{
+
+
+    color:#777;
+
+
+    font-size:.95rem;
+
+
+    margin-top:20px;
+
+
+}
+
+
+
+
+
+/* ==========================================================
+   CARTÃO
+========================================================== */
+
+
+.btn-whatsapp{
+
+
+    display:block;
+
+
+    width:100%;
+
+
+    margin-top:25px;
+
+
+    padding:16px;
+
+
+    background:#25D366;
+
+
+    color:white;
+
+
+    text-decoration:none;
+
+
+    border-radius:12px;
+
+
+    font-weight:bold;
+
+
+    transition:.25s;
+
+
+}
+
+
+
+.btn-whatsapp:hover{
+
+
+    transform:translateY(-2px);
+
+
+}
+
+
+
+
+/* ==========================================================
+   UTILIDADES
+========================================================== */
+
+
+.escondido{
+
+
+    display:none;
+
+}
+
+
+
+@keyframes aparecer{
+
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(10px);
+
+    }
+
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+
+}
+
+
+
+/* ==========================================================
+   RESPONSIVO
+========================================================== */
+
+
+@media(max-width:768px){
+
+
+    .conteudo-principal{
+
+
+        flex-direction:column;
+
+
+        text-align:center;
+
+
+        gap:20px;
+
+
+    }
+
+
+
+    #logo{
+
+
+        width:80px;
+
+
+    }
+
+
+
+    .slogan{
+
+
+        font-size:1.5rem;
+
+
+    }
+
+
+
+    .descricao{
+
+
+        font-size:1rem;
+
+
+    }
+
+
+
+    .pagamento{
+
+
+        padding:40px 15px;
+
+
+    }
+
+
+
+    .card-pagamento{
+
+
+        padding:25px 20px;
+
+
+    }
+
+
+
+    .card-pagamento h1{
+
+
+        font-size:1.5rem;
+
+
+    }
+
+
+
+    .opcoes{
+
+
+        flex-direction:column;
+
+
+    }
+
+
+
+    .linha{
+
+
+        font-size:.95rem;
+
+
+    }
+
+
+
+    .total strong{
+
+
+        font-size:1.3rem;
+
+
+    }
+
+
+
+    .chave-pix{
+
+
+        flex-direction:column;
+
+
+    }
+
+
+
+    .qrcode{
+
+
+        width:180px;
+
+
+        height:180px;
+
+
+    }
+
+
+}
+
+.whatsapp-info a{
+
+    color:#25D366;
+
+    font-size:1.15rem;
+
+    font-weight:bold;
+
+    text-decoration:none;
+
+}
+
+.whatsapp-info a:hover{
+
+    text-decoration:underline;
+
+}
