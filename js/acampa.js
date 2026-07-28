@@ -1,4 +1,11 @@
 // ======================================================
+// SUPABASE
+// ======================================================
+
+import { supabase } from "./supabase.js";
+
+
+// ======================================================
 // CONFIGURAÇÕES
 // ======================================================
 
@@ -6,66 +13,66 @@ const VALOR_INSCRICAO = 250;
 
 
 // ======================================================
-// ELEMENTOS
+// ELEMENTOS DA PÁGINA
 // ======================================================
 
-const btnMais = document.getElementById("mais");
-const btnMenos = document.getElementById("menos");
+const elementos = {
 
-const spanQuantidade = document.getElementById("quantidade");
-const valorTotal = document.getElementById("valor-total");
+    btnMais: document.getElementById("mais"),
+    btnMenos: document.getElementById("menos"),
 
-const nome = document.getElementById("nome");
-const telefone = document.getElementById("telefone");
-const email = document.getElementById("email");
-const campus = document.getElementById("campus");
+    quantidade: document.getElementById("quantidade"),
+    valorTotal: document.getElementById("valor-total"),
 
-const btnApadrinhar = document.getElementById("btn-apadrinhar");
+    nome: document.getElementById("nome"),
+    telefone: document.getElementById("telefone"),
+    email: document.getElementById("email"),
+    campus: document.getElementById("campus"),
+
+    btnApadrinhar: document.getElementById("btn-apadrinhar")
+
+};
 
 
 // ======================================================
-// VARIÁVEIS
+// ESTADO
 // ======================================================
 
 let quantidade = 1;
 
 
 // ======================================================
-// FUNÇÕES
+// ATUALIZAÇÃO DE VALORES
 // ======================================================
 
-function atualizarTotal() {
+function atualizarTotal(){
 
-    spanQuantidade.textContent = quantidade;
+    elementos.quantidade.textContent = quantidade;
 
-    valorTotal.textContent =
+    elementos.valorTotal.textContent =
         (quantidade * VALOR_INSCRICAO)
-        .toLocaleString("pt-BR", {
-            style: "currency",
-            currency: "BRL"
+        .toLocaleString("pt-BR",{
+            style:"currency",
+            currency:"BRL"
         });
 
 }
 
 
-function emailValido(emailDigitado) {
+// ======================================================
+// MÁSCARA TELEFONE
+// ======================================================
 
-    if (emailDigitado.trim() === "")
-        return true;
+function aplicarMascaraTelefone(valor){
 
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailDigitado);
+    valor = valor.replace(/\D/g,"");
 
-}
-
-
-function aplicarMascaraTelefone(valor) {
-
-    valor = valor.replace(/\D/g, "");
-
-    if (valor.length > 11)
+    if(valor.length > 11){
         valor = valor.slice(0,11);
+    }
 
-    if (valor.length > 10){
+
+    if(valor.length > 10){
 
         return valor.replace(
             /(\d{2})(\d{5})(\d{4})/,
@@ -73,6 +80,7 @@ function aplicarMascaraTelefone(valor) {
         );
 
     }
+
 
     if(valor.length > 6){
 
@@ -83,6 +91,7 @@ function aplicarMascaraTelefone(valor) {
 
     }
 
+
     if(valor.length > 2){
 
         return valor.replace(
@@ -91,6 +100,7 @@ function aplicarMascaraTelefone(valor) {
         );
 
     }
+
 
     return valor;
 
@@ -101,47 +111,59 @@ function aplicarMascaraTelefone(valor) {
 // VALIDAÇÃO
 // ======================================================
 
+function emailValido(email){
+
+    if(email.trim() === ""){
+        return true;
+    }
+
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+}
+
+
+
 function validarFormulario(){
 
-    if(nome.value.trim() === ""){
+    if(elementos.nome.value.trim() === ""){
 
         alert("Informe seu nome.");
-
-        nome.focus();
+        elementos.nome.focus();
 
         return false;
 
     }
 
-    if(telefone.value.trim().length < 14){
+
+    if(elementos.telefone.value.length < 14){
 
         alert("Informe um telefone válido.");
-
-        telefone.focus();
+        elementos.telefone.focus();
 
         return false;
 
     }
 
-    if(!emailValido(email.value)){
+
+    if(!emailValido(elementos.email.value)){
 
         alert("Informe um e-mail válido.");
-
-        email.focus();
+        elementos.email.focus();
 
         return false;
 
     }
 
-    if(campus.value === ""){
+
+    if(elementos.campus.value === ""){
 
         alert("Selecione seu campus.");
-
-        campus.focus();
+        elementos.campus.focus();
 
         return false;
 
     }
+
 
     return true;
 
@@ -149,33 +171,106 @@ function validarFormulario(){
 
 
 // ======================================================
-// PERSISTÊNCIA
+// SUPABASE - GRAVAÇÃO
 // ======================================================
 
-function salvarDados(){
+async function salvarControleAcampa(){
+
 
     const dados = {
 
-        nome: nome.value.trim(),
+        nome: elementos.nome.value.trim(),
 
-        telefone: telefone.value.trim(),
+        telefone: elementos.telefone.value.trim(),
 
-        email: email.value.trim(),
+        email: elementos.email.value.trim(),
 
-        campus: campus.value,
+        campus: elementos.campus.value,
 
-        quantidade,
+        quantidade_criancas: quantidade,
 
-        valorUnitario: VALOR_INSCRICAO,
-
-        valorTotal: quantidade * VALOR_INSCRICAO
+        status: "pendente"
 
     };
 
+
+    const { error } = await supabase
+        .from("controle_acampa")
+        .insert([dados]);
+
+
+    /*if(error){
+
+        console.error("Erro Supabase:", error);
+
+        alert(
+            "Não foi possível salvar sua inscrição."
+        );
+
+        return false;
+
+    } */
+
+    if(error){
+
+    console.error("Erro Supabase completo:", error);
+
+    console.log("Mensagem:", error.message);
+    console.log("Detalhes:", error.details);
+    console.log("Hint:", error.hint);
+    console.log("Código:", error.code);
+
+    alert(
+        "Erro: " + error.message
+    );
+
+    return null;
+
+    }
+
+
+    return true;
+
+
+}
+
+
+// ======================================================
+// LOCAL STORAGE
+// ======================================================
+
+function salvarDadosPagamento(registro){
+
+
+    const dadosPagamento = {
+
+
+        id: registro.id,
+
+        nome: elementos.nome.value.trim(),
+
+        telefone: elementos.telefone.value.trim(),
+
+        email: elementos.email.value.trim(),
+
+        campus: elementos.campus.value,
+
+
+        quantidade: quantidade,
+
+        valorUnitario: VALOR_INSCRICAO,
+
+        valorTotal:
+            quantidade * VALOR_INSCRICAO
+
+    };
+
+
     localStorage.setItem(
         "apadrinhamentoAcampa",
-        JSON.stringify(dados)
+        JSON.stringify(dadosPagamento)
     );
+
 
 }
 
@@ -184,10 +279,10 @@ function salvarDados(){
 // NAVEGAÇÃO
 // ======================================================
 
-function abrirPagamento(){
+function irParaPagamento(){
 
-   // window.location.href = "/pages/pagto-acampa.html";
-    window.location.href = "/pagamento";
+   window.location.href = "/pagamento";
+  /* window.location.href = "./pagto-acampa.html";*/ 
 
 }
 
@@ -196,7 +291,8 @@ function abrirPagamento(){
 // EVENTOS
 // ======================================================
 
-btnMais.addEventListener("click",()=>{
+
+elementos.btnMais.addEventListener("click",()=>{
 
     quantidade++;
 
@@ -205,9 +301,11 @@ btnMais.addEventListener("click",()=>{
 });
 
 
-btnMenos.addEventListener("click",()=>{
 
-    if(quantidade>1){
+elementos.btnMenos.addEventListener("click",()=>{
+
+
+    if(quantidade > 1){
 
         quantidade--;
 
@@ -218,24 +316,46 @@ btnMenos.addEventListener("click",()=>{
 });
 
 
-telefone.addEventListener("input",(e)=>{
 
-    e.target.value =
-        aplicarMascaraTelefone(e.target.value);
+elementos.telefone.addEventListener(
+    "input",
+    (evento)=>{
 
-});
+        evento.target.value =
+            aplicarMascaraTelefone(evento.target.value);
+
+    }
+);
 
 
-btnApadrinhar.addEventListener("click",()=>{
 
-    if(!validarFormulario())
-        return;
+elementos.btnApadrinhar.addEventListener(
+    "click",
+    async ()=>{
 
-    salvarDados();
 
-    abrirPagamento();
+        if(!validarFormulario()){
+            return;
+        }
 
-});
+
+        const registro =
+            await salvarControleAcampa();
+
+
+        if(!registro){
+            return;
+        }
+
+
+        salvarDadosPagamento(registro);
+
+
+        irParaPagamento();
+
+
+    }
+);
 
 
 // ======================================================
