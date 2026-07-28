@@ -1,0 +1,123 @@
+body{
+
+    font-family:Arial,Helvetica,sans-serif;
+
+}
+
+.card{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+}
+
+.card h2{
+
+    color:#666;
+
+    font-size:14px;
+
+    margin-bottom:10px;
+
+}
+
+.card span{
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    color:#2c3a63;
+
+}
+
+table{
+
+    border-collapse:collapse;
+
+}
+
+thead{
+
+    background:#2c3a63;
+
+    color:white;
+
+}
+
+th,td{
+
+    padding:12px;
+
+    border-bottom:1px solid #eee;
+
+    text-align:left;
+
+}
+
+button{
+
+    background:#2c3a63;
+
+    color:white;
+
+    border:none;
+
+    padding:8px 15px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+button:hover{
+
+    opacity:.9;
+
+}
+
+.status{
+
+    font-weight:bold;
+
+}
+
+.btn-pago{
+
+    background:#16a34a;
+    color:#fff;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+.btn-pendente{
+
+    background:#dc2626;
+    color:#fff;
+    padding:8px 12px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+td.pago{
+
+    color:#16a34a;
+    font-weight:bold;
+
+}
+
+td.pendente{
+
+    color:#dc2626;
+    font-weight:bold;
+
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Administração Acampa</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="../css/acampa_admin.css">
+
+</head>
+
+<body class="bg-slate-100">
+
+<div class="max-w-7xl mx-auto p-6">
+
+    <h1 class="text-3xl font-bold mb-6 text-[#2c3a63]">
+
+        Administração Acampa Paz
+
+    </h1>
+
+    <div class="grid md:grid-cols-4 gap-4 mb-6">
+
+        <div class="card">
+            <h2>Total</h2>
+            <span id="total"></span>
+        </div>
+
+        <div class="card">
+            <h2>Pendentes</h2>
+            <span id="pendentes"></span>
+        </div>
+
+        <div class="card">
+            <h2>Pagos</h2>
+            <span id="pagos"></span>
+        </div>
+
+        <div class="card">
+            <h2>Valor</h2>
+            <span id="valor"></span>
+        </div>
+
+    </div>
+
+    <input
+
+        id="pesquisa"
+
+        type="text"
+
+        placeholder="Pesquisar..."
+
+        class="w-full border rounded-lg p-3 mb-5"
+
+    >
+
+    <div class="overflow-auto bg-white rounded-xl shadow">
+
+        <table class="w-full">
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>Data</th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                    <th>Campus</th>
+                    <th>Qtd</th>
+                    <th>Status</th>
+                    <th>Ação</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="tabela"></tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script type="module" src="../js/acampa_admin.js"></script>
+
+</body>
+
+</html>

@@ -1,4 +1,8 @@
 
+import { verificarLogin } from "./auth.js";
+
+await verificarLogin();
+
 // ======================
 // LOGOUT
 // ======================
