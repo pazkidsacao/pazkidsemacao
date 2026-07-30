@@ -9,7 +9,7 @@ import { supabase } from "./supabase.js";
 // CONFIGURAÇÕES
 // ======================================================
 
-const VALOR_INSCRICAO = 250;
+const VALOR_INSCRICAO = 500;
 
 
 // ======================================================
