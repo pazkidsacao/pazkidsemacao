@@ -2,27 +2,23 @@
    RESET
 ========================================================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f5f7fa;
-    color:#333;
-    line-height:1.4;
-
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fa;
+    color: #333;
+    line-height: 1.4;
 }
 
-img{
-
-    display:block;
-    max-width:100%;
-    height:auto;
-
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 
@@ -30,90 +26,47 @@ img{
    CABEÇALHO
 ========================================================== */
 
-.secao-principal{
-
-    background:linear-gradient(135deg,#2E0550,#4b0d82);
-
+.secao-principal {
+    background: linear-gradient(
+        135deg,
+        #2E0550,
+        #4b0d82
+    );
 }
 
-.camada-escura{
-
-    background:rgba(46,5,80,.80);
-    padding:30px 10px;
-
+.camada-escura {
+    background: rgba(46, 5, 80, .80);
+    padding: 30px 10px;
 }
 
-.container{
-
-    max-width:1200px;
-    margin:auto;
-
+.container {
+    max-width: 1200px;
+    margin: auto;
 }
 
-.conteudo-principal{
-
-    display:flex;
-    align-items:center;
-    gap:50px;
-
+.conteudo-principal {
+    display: flex;
+    align-items: center;
+    gap: 50px;
 }
 
-#logo{
-
-    width:100px;
-
+#logo {
+    width: 100px;
 }
 
-.area-texto{
-
-    color:#fff;
-
+.area-texto {
+    color: #fff;
 }
 
-.slogan{
-
-    font-size:2.2rem;
-    font-weight:bold;
-    margin-bottom:20px;
-
+.slogan {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
 
-.descricao{
-
-    font-size:1.1rem;
-    max-width:650px;
-
-}
-
-.area-voltar{
-
-    margin-top:30px;
-
-}
-
-.btn-voltar{
-
-    background:#fff;
-    color:#004aad;
-
-    border:none;
-
-    padding:12px 22px;
-
-    border-radius:10px;
-
-    cursor:pointer;
-
-    font-weight:bold;
-
-    transition:.25s;
-
-}
-
-.btn-voltar:hover{
-
-    transform:translateY(-2px);
-
+.descricao {
+    font-size: 1.1rem;
+    max-width: 650px;
 }
 
 
@@ -121,381 +74,646 @@ img{
    APRESENTAÇÃO
 ========================================================== */
 
-.dados-acampa{
-
-    padding:70px 20px;
-
+.dados-acampa {
+    padding: 70px 20px 45px;
 }
 
-.container-acampa{
+.container-acampa {
+    max-width: 1200px;
+    margin: auto;
 
-    max-width:1200px;
+    display: flex;
+    align-items: center;
 
-    margin:auto;
-
-    display:flex;
-    align-items:center;
-
-    gap:45px;
-
+    gap: 45px;
 }
 
-.imagem-acampa{
+.imagem-acampa {
+    width: 250px;
+    height: 250px;
 
-    width:250px;
-    height:250px;
+    object-fit: cover;
 
-    object-fit:cover;
+    border-radius: 18px;
 
-    border-radius:18px;
-
-    box-shadow:0 12px 35px rgba(0,0,0,.18);
-
+    box-shadow:
+        0 12px 35px
+        rgba(0, 0, 0, .18);
 }
 
-.conteudo-acampa{
-
-    flex:1;
-
+.conteudo-acampa {
+    flex: 1;
 }
 
-.titulo-acampa{
+.titulo-acampa {
+    color: #004aad;
 
-    color:#004aad;
+    font-size: 2rem;
 
-    font-size:2rem;
-
-    margin-bottom:25px;
-
+    margin-bottom: 25px;
 }
 
-.texto-acampa-paragrafo{
+.texto-acampa-paragrafo {
+    color: #555;
 
-    color:#555;
+    font-size: 1rem;
 
-    font-size:1rem;
-
-    margin-bottom:18px;
-
-}/* ==========================================================
-   CARD DE APADRINHAMENTO
-========================================================== */
-
-.area-apadrinhamento{
-
-    padding:20px 20px 70px;
-
-}
-
-.card-apadrinhamento{
-
-    max-width:650px;
-
-    margin:auto;
-
-    padding:40px;
-
-    background:#fff;
-
-    border-radius:18px;
-
-    box-shadow:0 15px 40px rgba(0,0,0,.10);
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-
+    margin-bottom: 18px;
 }
 
 
 /* ==========================================================
-   TEXTO
+   ÁREA DAS CRIANÇAS
 ========================================================== */
 
-.card-apadrinhamento h2{
-
-    color:#004aad;
-    text-align:center;
-
-    margin-bottom:15px;
-
+.area-criancas {
+    padding: 20px 20px 80px;
 }
 
-.texto-apoio{
+.container-criancas {
+    max-width: 1200px;
+    margin: auto;
+}
 
-    text-align:center;
+.titulo-criancas {
+    color: #004aad;
 
-    color:#777;
+    font-size: 2rem;
 
-    margin-bottom:10px;
+    text-align: center;
 
+    margin-bottom: 10px;
+}
+
+.subtitulo-criancas {
+    color: #777;
+
+    text-align: center;
+
+    margin-bottom: 35px;
 }
 
 
 /* ==========================================================
-   VALOR
+   GRID
 ========================================================== */
 
-.valor-inscricao{
+.grid-criancas {
+    display: grid;
 
-    display:flex;
+    grid-template-columns:
+        repeat(4, 1fr);
 
-    align-items:baseline;
-
-    justify-content:center;
-
-    gap:10px;
-
-    margin-bottom:30px;
-
-}
-
-#valor-unitario{
-
-    color:#28a745;
-
-    font-size:2rem;
-
-    margin:0;
-
-}
-
-.valor-inscricao .texto-apoio{
-
-    margin:0;
-
-    color:#777;
-
-    font-size:1rem;
-
+    gap: 25px;
 }
 
 
 /* ==========================================================
-   QUANTIDADE
+   CARD DA CRIANÇA
 ========================================================== */
 
-.quantidade{
+.card-crianca {
+    background: #fff;
 
-    text-align:center;
+    border-radius: 18px;
 
-    margin-bottom:25px;
+    overflow: hidden;
 
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, .10);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
 }
 
-.quantidade label{
+.card-crianca:hover {
+    transform: translateY(-5px);
 
-    display:block;
-
-    font-weight:bold;
-
-    margin-bottom:15px;
-
-}
-
-.controle{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:20px;
-
-}
-
-.controle button{
-
-    width:48px;
-    height:48px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:#004aad;
-
-    color:#fff;
-
-    font-size:1.2rem;
-
-    cursor:pointer;
-
-    transition:.25s;
-
-}
-
-.controle button:hover{
-
-    background:#00337d;
-
-    transform:scale(1.08);
-
-}
-
-#quantidade{
-
-    width:40px;
-
-    text-align:center;
-
-    font-size:1.5rem;
-
-    font-weight:bold;
-
+    box-shadow:
+        0 15px 35px
+        rgba(0, 0, 0, .16);
 }
 
 
 /* ==========================================================
-   TOTAL
+   FOTO DO CARD
 ========================================================== */
 
-.total{
+.card-crianca img {
+    width: 100%;
 
-    display:flex;
+    height: 260px;
 
-    justify-content:center;
+    object-fit: contain;
 
-    align-items:baseline;
+    background: #f1f1f1;
 
-    gap:10px;
-
-    margin:30px 0;
-
-    width:100%;
-
-    text-align:center;
-
+    padding: 5px;
 }
 
-.total span{
 
-    color:#555;
+/* ==========================================================
+   INFORMAÇÕES DO CARD
+========================================================== */
 
-    font-size:1.15rem;
+.info-crianca {
+    padding: 18px;
 
+    text-align: center;
 }
 
-.total strong{
+.info-crianca h3 {
+    color: #260255;
 
-    color:#28a745;
+    font-size: 1.2rem;
 
-    font-size:1.5rem;
-
+    margin-bottom: 5px;
 }
 
-hr{
+.info-crianca p {
+    color: #777;
 
-    width:100%;
-
-    margin:30px 0;
-
-    border:none;
-
-    border-top:1px solid #ddd;
-
+    font-size: 1rem;
 }
+
+
+/* ==========================================================
+   MENSAGENS DA GRID
+========================================================== */
+
+.mensagem-carregando,
+.mensagem-erro {
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    color: #777;
+
+    padding: 40px 20px;
+
+    font-size: 1rem;
+}
+
+
+/* ==========================================================
+   MODAIS
+========================================================== */
+
+.modal-crianca {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0, 0, 0, .70);
+
+    z-index: 1000;
+}
+
+.modal-crianca.aberto {
+    display: flex;
+}
+
+
+/* ==========================================================
+   CONTEÚDO DO MODAL
+========================================================== */
+
+.conteudo-modal {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 450px;
+
+    padding: 30px;
+
+    background: #fff;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, .30);
+
+    text-align: center;
+
+    animation:
+        aparecerModal .25s ease;
+}
+
+@keyframes aparecerModal {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(.92);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+
+/* ==========================================================
+   BOTÃO FECHAR
+========================================================== */
+
+.fechar-modal {
+    position: absolute;
+
+    top: 12px;
+    right: 15px;
+
+    width: 38px;
+    height: 38px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #f0f0f0;
+
+    color: #555;
+
+    font-size: 1.6rem;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+    z-index: 2;
+}
+
+.fechar-modal:hover {
+    background: #ddd;
+
+    transform:
+        scale(1.08);
+}
+
+
+/* ==========================================================
+   FOTO DO MODAL DA CRIANÇA
+========================================================== */
+
+.modal-foto {
+    width: 100%;
+
+    height: 330px;
+
+    object-fit: contain;
+
+    background: #f5f5f5;
+
+    border-radius: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ==========================================================
+   INFORMAÇÕES DO MODAL
+========================================================== */
+
+#modal-nome {
+    color: #260255;
+
+    font-size: 1.7rem;
+
+    margin-bottom: 5px;
+}
+
+#modal-idade {
+    color: #777;
+
+    font-size: 1.05rem;
+
+    margin-bottom: 25px;
+}
+
+
+/* ==========================================================
+   BOTÃO APADRINHAR
+========================================================== */
+
+.btn-modal-apadrinhar {
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #260255;
+
+    color: #fff;
+
+    font-size: 1.1rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.btn-modal-apadrinhar:hover {
+    background: #7c66bb;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* ==========================================================
+   MODAL DO FORMULÁRIO
+========================================================== */
+
+.conteudo-modal-formulario {
+    max-width: 550px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    text-align: left;
+}
+
+
+/* ==========================================================
+   CRIANÇA ESCOLHIDA
+========================================================== */
+
+.crianca-escolhida {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 12px;
+
+    margin-bottom: 20px;
+
+    background: #f5f7fa;
+
+    border-radius: 12px;
+
+    text-align: left;
+}
+
+.crianca-escolhida img {
+    width: 70px;
+    height: 70px;
+
+    object-fit: contain;
+
+    background: #f0f0f0;
+
+    border-radius: 10px;
+
+    flex-shrink: 0;
+}
+
+.crianca-escolhida div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.crianca-escolhida strong {
+    color: #260255;
+
+    font-size: 1.1rem;
+}
+
+.crianca-escolhida span {
+    color: #777;
+
+    font-size: .95rem;
+}
+
+
+/* ==========================================================
+   TEXTO DE APOIO
+========================================================== */
+
+.texto-apoio {
+    text-align: center;
+
+    color: #777;
+
+    margin-bottom: 10px;
+}
+
+
+/* ==========================================================
+   VALOR DA INSCRIÇÃO
+========================================================== */
+
+.valor-inscricao {
+    display: flex;
+
+    align-items: baseline;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+#valor-unitario {
+    color: #28a745;
+
+    font-size: 2rem;
+
+    margin: 0;
+}
+
+.valor-inscricao .texto-apoio {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 1rem;
+}
+
 
 /* ==========================================================
    FORMULÁRIO
 ========================================================== */
 
-.card-apadrinhamento input,
-.card-apadrinhamento select{
+.conteudo-modal-formulario input,
+.conteudo-modal-formulario select {
+    width: 100%;
 
-    width:100%;
+    padding: 14px;
 
-    padding:14px;
+    margin-bottom: 18px;
 
-    margin-bottom:18px;
+    border:
+        1px solid #ccc;
 
-    border:1px solid #ccc;
+    border-radius: 10px;
 
-    border-radius:10px;
+    font-size: 1rem;
 
-    font-size:1rem;
+    transition: .25s;
 
-    transition:.25s;
-
+    background: #fff;
 }
 
-.card-apadrinhamento input:focus,
-.card-apadrinhamento select:focus{
+.conteudo-modal-formulario input:focus,
+.conteudo-modal-formulario select:focus {
+    outline: none;
 
-    outline:none;
+    border-color: #004aad;
 
-    border-color:#004aad;
+    box-shadow:
+        0 0 8px
+        rgba(0, 74, 173, .20);
+}
 
-    box-shadow:0 0 8px rgba(0,74,173,.20);
+
+/* ==========================================================
+   LINHA
+========================================================== */
+
+hr {
+    width: 100%;
+
+    margin: 10px 0 25px;
+
+    border: none;
+
+    border-top:
+        1px solid #ddd;
+}
+
+
+/* ==========================================================
+   BOTÃO DO FORMULÁRIO
+========================================================== */
+
+.btn-apadrinhar {
+    width: 100%;
+
+    margin-top: 5px;
+
+    padding: 18px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #260255;
+
+    color: #fff;
+
+    font-size: 1.1rem;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.btn-apadrinhar:hover {
+    background: #7c66bb;
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1000px) {
+
+    .grid-criancas {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
 
 }
 
 
 /* ==========================================================
-   BOTÃO
-========================================================== */
-
-.btn-apadrinhar{
-
-    width:100%;
-
-    margin-top:10px;
-
-    padding:18px;
-
-    border:none;
-
-    border-radius:12px;
-
-    background:#260255;
-
-    color:#fff;
-
-    font-size:1.1rem;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.25s;
-
-}
-
-.btn-apadrinhar:hover{
-
-    background:#7c66bb;
-
-    transform:translateY(-2px);
-
-}
-
-/* ==========================================
    CELULAR
-========================================== */
+========================================================== */
 
 @media (max-width: 768px) {
 
     .conteudo-principal {
         flex-direction: column;
+
         gap: 20px;
+
         text-align: center;
     }
 
     .container-acampa {
         flex-direction: column;
+
         text-align: center;
+
         gap: 25px;
     }
 
-    .card-apadrinhamento {
-        width: 95%;
-        padding: 20px;
+    .grid-criancas {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+    .card-crianca img {
+        height: 220px;
+
+        object-fit: contain;
+    }
+
+    .info-crianca {
+        padding: 14px 8px;
+    }
+
+    .info-crianca h3 {
+        font-size: 1rem;
+    }
+
+    .info-crianca p {
+        font-size: .9rem;
     }
 
     .imagem-acampa {
         width: 220px;
+
         height: 220px;
+
         margin: 0 auto;
     }
 
@@ -505,6 +723,81 @@ hr{
 
     .titulo-acampa {
         font-size: 1.6rem;
+    }
+
+    .titulo-criancas {
+        font-size: 1.6rem;
+    }
+
+    .conteudo-modal {
+        max-width: 95%;
+
+        padding: 22px;
+    }
+
+    .modal-foto {
+        height: 300px;
+
+        object-fit: contain;
+    }
+
+    .conteudo-modal-formulario {
+        max-height: 92vh;
+    }
+
+}
+
+
+/* ==========================================================
+   CELULAR PEQUENO
+========================================================== */
+
+@media (max-width: 480px) {
+
+    .dados-acampa {
+        padding-top: 45px;
+    }
+
+    .area-criancas {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .grid-criancas {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+    .card-crianca img {
+        height: 190px;
+
+        object-fit: contain;
+    }
+
+    .modal-foto {
+        height: 280px;
+
+        object-fit: contain;
+    }
+
+    .crianca-escolhida img {
+        width: 60px;
+
+        height: 60px;
+    }
+
+    .conteudo-modal {
+        padding: 20px;
+    }
+
+    .titulo-criancas {
+        font-size: 1.45rem;
+    }
+
+    .subtitulo-criancas {
+        font-size: .95rem;
     }
 
 }

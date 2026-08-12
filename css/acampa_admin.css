@@ -1,123 +1,702 @@
-body{
+/* ==========================================================
+   RESET
+========================================================== */
 
-    font-family:Arial,Helvetica,sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   BODY
+========================================================== */
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f1f4f8;
+
+    color: #333;
+
+    line-height: 1.4;
 
 }
 
-.card{
 
-    background:white;
+/* ==========================================================
+   PÁGINA
+========================================================== */
 
-    padding:20px;
+.pagina-admin {
 
-    border-radius:12px;
+    min-height: 100vh;
 
-    text-align:center;
-
-    box-shadow:0 2px 10px rgba(0,0,0,.08);
-
-}
-
-.card h2{
-
-    color:#666;
-
-    font-size:14px;
-
-    margin-bottom:10px;
+    padding:
+        35px
+        20px
+        60px;
 
 }
 
-.card span{
 
-    font-size:30px;
+.container-admin {
 
-    font-weight:bold;
+    width: 100%;
 
-    color:#2c3a63;
+    max-width: 1400px;
 
-}
-
-table{
-
-    border-collapse:collapse;
+    margin: auto;
 
 }
 
-thead{
 
-    background:#2c3a63;
+/* ==========================================================
+   CABEÇALHO
+========================================================== */
 
-    color:white;
+.cabecalho-admin {
 
-}
+    background:
+        linear-gradient(
+            135deg,
+            #2e0550,
+            #4b0d82
+        );
 
-th,td{
+    color: #fff;
 
-    padding:12px;
+    border-radius: 18px;
 
-    border-bottom:1px solid #eee;
+    padding:
+        28px
+        32px;
 
-    text-align:left;
+    margin-bottom: 25px;
 
-}
-
-button{
-
-    background:#2c3a63;
-
-    color:white;
-
-    border:none;
-
-    padding:8px 15px;
-
-    border-radius:8px;
-
-    cursor:pointer;
+    box-shadow:
+        0 10px 30px
+        rgba(0, 0, 0, .12);
 
 }
 
-button:hover{
 
-    opacity:.9;
+.cabecalho-admin h1 {
 
-}
+    font-size: 2rem;
 
-.status{
+    font-weight: 700;
 
-    font-weight:bold;
-
-}
-
-.btn-pago{
-
-    background:#16a34a;
-    color:#fff;
-    padding:8px 12px;
-    border-radius:6px;
-    cursor:pointer;
-}
-
-.btn-pendente{
-
-    background:#dc2626;
-    color:#fff;
-    padding:8px 12px;
-    border-radius:6px;
-    cursor:pointer;
-}
-
-td.pago{
-
-    color:#16a34a;
-    font-weight:bold;
+    margin-bottom: 5px;
 
 }
 
-td.pendente{
 
-    color:#dc2626;
-    font-weight:bold;
+.cabecalho-admin p {
+
+    font-size: 1rem;
+
+    opacity: .85;
+
+}
+
+
+/* ==========================================================
+   RESUMO
+========================================================== */
+
+.resumo {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.card-resumo {
+
+    background: #fff;
+
+    border-radius: 16px;
+
+    padding: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, .07);
+
+    border-left:
+        5px solid #2e0550;
+
+}
+
+
+.card-resumo.pendente {
+
+    border-left-color: #d98b00;
+
+}
+
+
+.card-resumo.pago {
+
+    border-left-color: #28a745;
+
+}
+
+
+.card-resumo.valor {
+
+    border-left-color: #004aad;
+
+}
+
+
+.icone-resumo {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 12px;
+
+    background: #f0edf5;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 1.35rem;
+
+    flex-shrink: 0;
+
+}
+
+
+.card-resumo h2 {
+
+    color: #777;
+
+    font-size: .9rem;
+
+    font-weight: normal;
+
+    margin-bottom: 3px;
+
+}
+
+
+.card-resumo strong {
+
+    display: block;
+
+    color: #2e0550;
+
+    font-size: 1.5rem;
+
+}
+
+
+.card-resumo.pendente strong {
+
+    color: #b36b00;
+
+}
+
+
+.card-resumo.pago strong {
+
+    color: #218838;
+
+}
+
+
+.card-resumo.valor strong {
+
+    color: #004aad;
+
+    font-size: 1.3rem;
+
+}
+
+
+/* ==========================================================
+   PESQUISA
+========================================================== */
+
+.area-pesquisa {
+
+    background: #fff;
+
+    border-radius: 16px;
+
+    padding: 18px;
+
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, .06);
+
+}
+
+
+.area-pesquisa input {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border:
+        1px solid #d4d8de;
+
+    border-radius: 10px;
+
+    font-size: 1rem;
+
+    color: #333;
+
+    transition: .2s;
+
+}
+
+
+.area-pesquisa input:focus {
+
+    outline: none;
+
+    border-color: #004aad;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(0, 74, 173, .10);
+
+}
+
+
+.area-pesquisa input::placeholder {
+
+    color: #999;
+
+}
+
+
+/* ==========================================================
+   TABELA
+========================================================== */
+
+.area-tabela {
+
+    background: #fff;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 8px 25px
+        rgba(0, 0, 0, .07);
+
+    overflow: hidden;
+
+}
+
+
+.tabela-container {
+
+    width: 100%;
+
+    overflow-x: auto;
+
+}
+
+
+table {
+
+    width: 100%;
+
+    min-width: 1050px;
+
+    border-collapse: collapse;
+
+}
+
+
+/* ==========================================================
+   CABEÇALHO DA TABELA
+========================================================== */
+
+thead {
+
+    background:
+        #2e0550;
+
+    color: #fff;
+
+}
+
+
+th {
+
+    padding:
+        16px
+        14px;
+
+    text-align: left;
+
+    font-size: .85rem;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+}
+
+
+th:first-child {
+
+    padding-left: 20px;
+
+}
+
+
+/* ==========================================================
+   LINHAS
+========================================================== */
+
+tbody tr {
+
+    border-bottom:
+        1px solid #e8eaed;
+
+    transition: .15s;
+
+}
+
+
+tbody tr:hover {
+
+    background: #f8f7fb;
+
+}
+
+
+tbody tr:last-child {
+
+    border-bottom: none;
+
+}
+
+
+td {
+
+    padding:
+        14px;
+
+    font-size: .9rem;
+
+    color: #444;
+
+    white-space: nowrap;
+
+}
+
+
+td:first-child {
+
+    padding-left: 20px;
+
+    font-weight: 700;
+
+    color: #2e0550;
+
+}
+
+
+/* ==========================================================
+   ID DA CRIANÇA
+========================================================== */
+
+td:nth-child(7) {
+
+    font-weight: 700;
+
+    color: #004aad;
+
+}
+
+
+/* ==========================================================
+   STATUS
+========================================================== */
+
+td.pendente {
+
+    color: #b36b00;
+
+    font-weight: 700;
+
+}
+
+
+td.pago {
+
+    color: #218838;
+
+    font-weight: 700;
+
+}
+
+
+/* ==========================================================
+   BOTÕES
+========================================================== */
+
+.btn-pago,
+.btn-pendente {
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding:
+        9px
+        13px;
+
+    font-size: .85rem;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+    white-space: nowrap;
+
+}
+
+
+.btn-pago {
+
+    background: #28a745;
+
+    color: #fff;
+
+}
+
+
+.btn-pago:hover {
+
+    background: #218838;
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.btn-pendente {
+
+    background: #f0f0f0;
+
+    color: #555;
+
+    border:
+        1px solid #ccc;
+
+}
+
+
+.btn-pendente:hover {
+
+    background: #ddd;
+
+}
+
+
+/* ==========================================================
+   MENSAGEM / TABELA VAZIA
+========================================================== */
+
+#tabela:empty::after {
+
+    content:
+        "Nenhum registro encontrado.";
+
+    display: block;
+
+    text-align: center;
+
+    padding: 35px;
+
+    color: #888;
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 1000px) {
+
+    .resumo {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+/* ==========================================================
+   CELULAR
+========================================================== */
+
+@media (max-width: 600px) {
+
+    .pagina-admin {
+
+        padding:
+            15px
+            10px
+            40px;
+
+    }
+
+
+    .cabecalho-admin {
+
+        padding: 22px;
+
+        border-radius: 14px;
+
+    }
+
+
+    .cabecalho-admin h1 {
+
+        font-size: 1.5rem;
+
+    }
+
+
+    .cabecalho-admin p {
+
+        font-size: .9rem;
+
+    }
+
+
+    .resumo {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 10px;
+
+    }
+
+
+    .card-resumo {
+
+        padding: 15px;
+
+        gap: 10px;
+
+        border-left-width: 4px;
+
+    }
+
+
+    .icone-resumo {
+
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 1.1rem;
+
+    }
+
+
+    .card-resumo h2 {
+
+        font-size: .8rem;
+
+    }
+
+
+    .card-resumo strong {
+
+        font-size: 1.3rem;
+
+    }
+
+
+    .card-resumo.valor strong {
+
+        font-size: 1.05rem;
+
+    }
+
+
+    .area-pesquisa {
+
+        padding: 12px;
+
+        border-radius: 12px;
+
+    }
+
+
+    .area-tabela {
+
+        border-radius: 12px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   CELULAR PEQUENO
+========================================================== */
+
+@media (max-width: 400px) {
+
+    .resumo {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .card-resumo {
+
+        display: flex;
+
+        justify-content: flex-start;
+
+    }
 
 }

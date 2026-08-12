@@ -2,19 +2,27 @@
 <html lang="pt-BR">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>Acampa Paz Kids 2026</title>
 
-  <!--   <script src="https://cdn.tailwindcss.com"></script> -->
+    <link
+        rel="stylesheet"
+        href="/css/acampa.css">
 
-    <link rel="stylesheet" href="/css/acampa.css">
 </head>
 
 <body>
 
-    <!-- CABEÇALHO -->
+    <!-- ======================================================
+         CABEÇALHO
+    ====================================================== -->
+
     <header class="secao-principal">
 
         <div class="camada-escura">
@@ -33,14 +41,9 @@
                     </p>
 
                     <p class="descricao">
-                        Levando amor, esperança e transformação para crianças e comunidades através do evangelho.
+                        Levando amor, esperança e transformação
+                        para crianças e comunidades através do evangelho.
                     </p>
-
-                    <!-- <div class="area-voltar">
-                        <button class="btn-voltar">
-                            ← Voltar
-                        </button>
-                    </div> -->
 
                 </div>
 
@@ -50,9 +53,12 @@
 
     </header>
 
+
     <main>
 
-        <!-- APRESENTAÇÃO -->
+        <!-- ======================================================
+             APRESENTAÇÃO
+        ====================================================== -->
 
         <section class="dados-acampa">
 
@@ -60,7 +66,7 @@
 
                 <img
                     src="/imagens/acampakids.jpg"
-                    alt="Acampamento"
+                    alt="Acampamento Paz Kids"
                     class="imagem-acampa">
 
                 <div class="conteudo-acampa">
@@ -70,10 +76,14 @@
                     </h2>
 
                     <p class="texto-acampa-paragrafo">
-                        O Acampa Kids proporciona dias de diversão, aprendizado e um encontro transformador com Jesus.
+                        O Acampa Kids proporciona dias de diversão,
+                        aprendizado e um encontro transformador com Jesus.
                     </p>
 
-                    
+                    <p class="texto-acampa-paragrafo">
+                        Escolha uma criança abaixo e ajude a tornar
+                        essa experiência possível.
+                    </p>
 
                 </div>
 
@@ -81,19 +91,143 @@
 
         </section>
 
-        <!-- FORMULÁRIO -->
 
-        <section class="area-apadrinhamento">
+        <!-- ======================================================
+             GRID DE CRIANÇAS
+        ====================================================== -->
 
-            <div class="card-apadrinhamento">
+        <section class="area-criancas">
 
-             <!--    <h2>
-                    Quero apadrinhar
+            <div class="container-criancas">
+
+                <h2 class="titulo-criancas">
+                    Escolha uma criança
                 </h2>
-            -->
-                <p class="texto-apoio">
-                    Ajude uma criança a viver dias inesquecíveis com Jesus.
+
+                <p class="subtitulo-criancas">
+                    Clique na criança que você deseja apadrinhar.
                 </p>
+
+                <div
+                    id="grid-criancas"
+                    class="grid-criancas">
+
+                    <p class="mensagem-carregando">
+                        Carregando crianças...
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             MODAL DA CRIANÇA
+        ====================================================== -->
+
+        <div
+            id="modal-crianca"
+            class="modal-crianca">
+
+            <div class="conteudo-modal">
+
+                <button
+                    id="fechar-modal"
+                    class="fechar-modal"
+                    type="button"
+                    aria-label="Fechar">
+
+                    &times;
+
+                </button>
+
+                <img
+                    id="modal-foto"
+                    class="modal-foto"
+                    src=""
+                    alt="">
+
+                <h2 id="modal-nome">
+                    Nome da criança
+                </h2>
+
+                <p id="modal-idade">
+                    Idade
+                </p>
+
+                <button
+                    id="modal-apadrinhar"
+                    class="btn-modal-apadrinhar"
+                    type="button">
+
+                    Apadrinhar
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ======================================================
+             MODAL DO FORMULÁRIO
+        ====================================================== -->
+
+        <div
+            id="modal-formulario"
+            class="modal-crianca">
+
+            <div
+                class="conteudo-modal conteudo-modal-formulario">
+
+                <button
+                    id="fechar-modal-formulario"
+                    class="fechar-modal"
+                    type="button"
+                    aria-label="Fechar">
+
+                    &times;
+
+                </button>
+
+
+                <!-- ==================================================
+                     CRIANÇA ESCOLHIDA
+                ================================================== -->
+
+                <div class="crianca-escolhida">
+
+                    <img
+                        id="form-foto-crianca"
+                        src=""
+                        alt="">
+
+                    <div>
+
+                        <strong id="form-nome-crianca">
+                            Criança escolhida
+                        </strong>
+
+                        <span id="form-idade-crianca">
+                            Idade
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <p class="texto-apoio">
+                    Preencha seus dados para continuar
+                    com o apadrinhamento.
+                </p>
+
+
+                <!-- ==================================================
+                     VALOR
+                ================================================== -->
 
                 <div class="valor-inscricao">
 
@@ -107,41 +241,10 @@
 
                 </div>
 
-                
 
-                <div class="quantidade">
-
-                    <label>
-                        Quantidade de inscrições
-                    </label>
-
-                    <div class="controle">
-
-                        <button id="menos">
-                            −
-                        </button>
-
-                        <span id="quantidade">
-                            1
-                        </span>
-
-                        <button id="mais">
-                            +
-                        </button>
-
-                    </div>
-
-                </div>
-
-                <div class="total">
-
-                    <span>Total</span>
-
-                    <strong id="valor-total">
-                        R$ 500,00
-                    </strong>
-
-                </div>
+                <!-- ==================================================
+                     DADOS DO PADRINHO
+                ================================================== -->
 
                 <hr>
 
@@ -166,30 +269,57 @@
                         Selecione seu campus
                     </option>
 
-                    <option>Anália Franco</option>
-                    <option>Eldorado</option>
-                    <option>Guarulhos</option>
-                    <option>São Caetano</option>
-                    <option>Online</option>
-                    <option>Outros</option>
+                    <option>
+                        Anália Franco
+                    </option>
+
+                    <option>
+                        Eldorado
+                    </option>
+
+                    <option>
+                        Guarulhos
+                    </option>
+
+                    <option>
+                        São Caetano
+                    </option>
+
+                    <option>
+                        Online
+                    </option>
+
+                    <option>
+                        Outros
+                    </option>
 
                 </select>
 
+
                 <button
                     id="btn-apadrinhar"
-                    class="btn-apadrinhar">
+                    class="btn-apadrinhar"
+                    type="button">
 
-                    Apadrinhar
+                    Continuar para pagamento
 
                 </button>
 
             </div>
 
-        </section>
+        </div>
 
     </main>
 
-    <script type="module" src="/js/acampa.js"></script>
+
+    <!-- ======================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script
+        type="module"
+        src="/js/acampa.js">
+    </script>
 
 </body>
 

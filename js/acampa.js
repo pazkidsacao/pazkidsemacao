@@ -11,6 +11,8 @@ import { supabase } from "./supabase.js";
 
 const VALOR_INSCRICAO = 500;
 
+const BUCKET_FOTOS = "fotos-criancas";
+
 
 // ======================================================
 // ELEMENTOS DA PÁGINA
@@ -18,18 +20,85 @@ const VALOR_INSCRICAO = 500;
 
 const elementos = {
 
-    btnMais: document.getElementById("mais"),
-    btnMenos: document.getElementById("menos"),
+    // --------------------------------------------------
+    // GRID
+    // --------------------------------------------------
 
-    quantidade: document.getElementById("quantidade"),
-    valorTotal: document.getElementById("valor-total"),
+    gridCriancas:
+        document.getElementById("grid-criancas"),
 
-    nome: document.getElementById("nome"),
-    telefone: document.getElementById("telefone"),
-    email: document.getElementById("email"),
-    campus: document.getElementById("campus"),
 
-    btnApadrinhar: document.getElementById("btn-apadrinhar")
+    // --------------------------------------------------
+    // MODAL DA CRIANÇA
+    // --------------------------------------------------
+
+    modal:
+        document.getElementById("modal-crianca"),
+
+    fecharModal:
+        document.getElementById("fechar-modal"),
+
+    modalFoto:
+        document.getElementById("modal-foto"),
+
+    modalNome:
+        document.getElementById("modal-nome"),
+
+    modalIdade:
+        document.getElementById("modal-idade"),
+
+    modalApadrinhar:
+        document.getElementById("modal-apadrinhar"),
+
+
+    // --------------------------------------------------
+    // MODAL DO FORMULÁRIO
+    // --------------------------------------------------
+
+    modalFormulario:
+        document.getElementById("modal-formulario"),
+
+    fecharModalFormulario:
+        document.getElementById(
+            "fechar-modal-formulario"
+        ),
+
+    formFotoCrianca:
+        document.getElementById(
+            "form-foto-crianca"
+        ),
+
+    formNomeCrianca:
+        document.getElementById(
+            "form-nome-crianca"
+        ),
+
+    formIdadeCrianca:
+        document.getElementById(
+            "form-idade-crianca"
+        ),
+
+
+    // --------------------------------------------------
+    // FORMULÁRIO
+    // --------------------------------------------------
+
+    nome:
+        document.getElementById("nome"),
+
+    telefone:
+        document.getElementById("telefone"),
+
+    email:
+        document.getElementById("email"),
+
+    campus:
+        document.getElementById("campus"),
+
+    btnApadrinhar:
+        document.getElementById(
+            "btn-apadrinhar"
+        )
 
 };
 
@@ -38,41 +107,339 @@ const elementos = {
 // ESTADO
 // ======================================================
 
-let quantidade = 1;
+// Criança escolhida pelo usuário
+let criancaSelecionada = null;
 
 
 // ======================================================
-// ATUALIZAÇÃO DE VALORES
+// URL DA FOTO
 // ======================================================
 
-function atualizarTotal(){
+function obterUrlFoto(nomeArquivo) {
 
-    elementos.quantidade.textContent = quantidade;
+    if (!nomeArquivo) {
+        return "";
+    }
 
-    elementos.valorTotal.textContent =
-        (quantidade * VALOR_INSCRICAO)
-        .toLocaleString("pt-BR",{
-            style:"currency",
-            currency:"BRL"
-        });
+
+    const { data } =
+
+        supabase
+            .storage
+            .from(BUCKET_FOTOS)
+            .getPublicUrl(nomeArquivo);
+
+
+    return data.publicUrl;
 
 }
 
 
 // ======================================================
-// MÁSCARA TELEFONE
+// CARREGAR CRIANÇAS
 // ======================================================
 
-function aplicarMascaraTelefone(valor){
+async function carregarCriancas() {
 
-    valor = valor.replace(/\D/g,"");
+    elementos.gridCriancas.innerHTML = `
 
-    if(valor.length > 11){
-        valor = valor.slice(0,11);
+        <p class="mensagem-carregando">
+            Carregando crianças...
+        </p>
+
+    `;
+
+
+    const { data, error } =
+
+        await supabase
+
+            .from("acampa")
+
+            .select(`
+                id,
+                foto_url,
+                nome,
+                data_nascimento,
+                sexo,
+                idade,
+                apadrinhada
+            `)
+
+            .eq(
+                "apadrinhada",
+                "nao"
+            )
+
+            .order(
+                "nome"
+            );
+
+
+    // --------------------------------------------------
+    // ERRO
+    // --------------------------------------------------
+
+    if (error) {
+
+        console.error(
+            "Erro ao carregar crianças:",
+            error
+        );
+
+
+        elementos.gridCriancas.innerHTML = `
+
+            <p class="mensagem-erro">
+                Não foi possível carregar
+                as crianças.
+            </p>
+
+        `;
+
+        return;
     }
 
 
-    if(valor.length > 10){
+    // --------------------------------------------------
+    // NENHUMA CRIANÇA
+    // --------------------------------------------------
+
+    if (
+        !data ||
+        data.length === 0
+    ) {
+
+        elementos.gridCriancas.innerHTML = `
+
+            <p class="mensagem-erro">
+                No momento não há crianças
+                disponíveis para apadrinhamento.
+            </p>
+
+        `;
+
+        return;
+    }
+
+
+    // --------------------------------------------------
+    // LIMPA A GRID
+    // --------------------------------------------------
+
+    elementos.gridCriancas.innerHTML = "";
+
+
+    // --------------------------------------------------
+    // CRIA OS CARDS
+    // --------------------------------------------------
+
+    data.forEach(
+        crianca => {
+
+            const foto =
+                obterUrlFoto(
+                    crianca.foto_url
+                );
+
+
+            const card =
+                document.createElement(
+                    "div"
+                );
+
+
+            card.className =
+                "card-crianca";
+
+
+            card.innerHTML = `
+
+                <img
+                    src="${foto}"
+                    alt="Foto de ${crianca.nome}"
+                    loading="lazy"
+                >
+
+                <div class="info-crianca">
+
+                    <h3>
+                        ${crianca.nome}
+                    </h3>
+
+                    <p>
+                        ${crianca.idade}
+                    </p>
+
+                </div>
+
+            `;
+
+
+            // ------------------------------------------
+            // CLIQUE NO CARD
+            // ------------------------------------------
+
+            card.addEventListener(
+                "click",
+                () => {
+
+                    abrirModal(
+                        crianca
+                    );
+
+                }
+            );
+
+
+            elementos.gridCriancas
+                .appendChild(card);
+
+        }
+    );
+
+}
+
+
+// ======================================================
+// ABRIR MODAL DA CRIANÇA
+// ======================================================
+
+function abrirModal(crianca) {
+
+    // Guarda a criança escolhida
+    criancaSelecionada =
+        crianca;
+
+
+    const foto =
+        obterUrlFoto(
+            crianca.foto_url
+        );
+
+
+    elementos.modalFoto.src =
+        foto;
+
+
+    elementos.modalFoto.alt =
+        `Foto de ${crianca.nome}`;
+
+
+    elementos.modalNome.textContent =
+        crianca.nome;
+
+
+    elementos.modalIdade.textContent =
+        crianca.idade;
+
+
+    elementos.modal.classList.add(
+        "aberto"
+    );
+
+}
+
+
+// ======================================================
+// FECHAR MODAL DA CRIANÇA
+// ======================================================
+
+function fecharModal() {
+
+    elementos.modal.classList.remove(
+        "aberto"
+    );
+
+}
+
+
+// ======================================================
+// ABRIR MODAL DO FORMULÁRIO
+// ======================================================
+
+function abrirModalFormulario() {
+
+    if (!criancaSelecionada) {
+
+        return;
+
+    }
+
+
+    const foto =
+        obterUrlFoto(
+            criancaSelecionada.foto_url
+        );
+
+
+    elementos.formFotoCrianca.src =
+        foto;
+
+
+    elementos.formFotoCrianca.alt =
+        `Foto de ${criancaSelecionada.nome}`;
+
+
+    elementos.formNomeCrianca.textContent =
+        criancaSelecionada.nome;
+
+
+    elementos.formIdadeCrianca.textContent =
+        criancaSelecionada.idade;
+
+
+    elementos.modalFormulario
+        .classList.add(
+            "aberto"
+        );
+
+}
+
+
+// ======================================================
+// FECHAR MODAL DO FORMULÁRIO
+// ======================================================
+
+function fecharModalFormulario() {
+
+    elementos.modalFormulario
+        .classList.remove(
+            "aberto"
+        );
+
+}
+
+
+// ======================================================
+// MÁSCARA DE TELEFONE
+// ======================================================
+
+function aplicarMascaraTelefone(valor) {
+
+    valor =
+        valor.replace(
+            /\D/g,
+            ""
+        );
+
+
+    if (
+        valor.length > 11
+    ) {
+
+        valor =
+            valor.slice(
+                0,
+                11
+            );
+
+    }
+
+
+    if (
+        valor.length > 10
+    ) {
 
         return valor.replace(
             /(\d{2})(\d{5})(\d{4})/,
@@ -82,7 +449,9 @@ function aplicarMascaraTelefone(valor){
     }
 
 
-    if(valor.length > 6){
+    if (
+        valor.length > 6
+    ) {
 
         return valor.replace(
             /(\d{2})(\d{4})(\d+)/,
@@ -92,7 +461,9 @@ function aplicarMascaraTelefone(valor){
     }
 
 
-    if(valor.length > 2){
+    if (
+        valor.length > 2
+    ) {
 
         return valor.replace(
             /(\d{2})(\d+)/,
@@ -108,26 +479,44 @@ function aplicarMascaraTelefone(valor){
 
 
 // ======================================================
-// VALIDAÇÃO
+// VALIDAÇÃO DE E-MAIL
 // ======================================================
 
-function emailValido(email){
+function emailValido(email) {
 
-    if(email.trim() === ""){
+    if (
+        email.trim() === ""
+    ) {
+
         return true;
+
     }
 
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        .test(email);
 
 }
 
 
+// ======================================================
+// VALIDAÇÃO DO FORMULÁRIO
+// ======================================================
 
-function validarFormulario(){
+function validarFormulario() {
 
-    if(elementos.nome.value.trim() === ""){
+    // --------------------------------------------------
+    // NOME
+    // --------------------------------------------------
 
-        alert("Informe seu nome.");
+    if (
+        elementos.nome.value.trim() === ""
+    ) {
+
+        alert(
+            "Informe seu nome."
+        );
+
         elementos.nome.focus();
 
         return false;
@@ -135,9 +524,18 @@ function validarFormulario(){
     }
 
 
-    if(elementos.telefone.value.length < 14){
+    // --------------------------------------------------
+    // TELEFONE
+    // --------------------------------------------------
 
-        alert("Informe um telefone válido.");
+    if (
+        elementos.telefone.value.length < 14
+    ) {
+
+        alert(
+            "Informe um telefone válido."
+        );
+
         elementos.telefone.focus();
 
         return false;
@@ -145,9 +543,20 @@ function validarFormulario(){
     }
 
 
-    if(!emailValido(elementos.email.value)){
+    // --------------------------------------------------
+    // E-MAIL
+    // --------------------------------------------------
 
-        alert("Informe um e-mail válido.");
+    if (
+        !emailValido(
+            elementos.email.value
+        )
+    ) {
+
+        alert(
+            "Informe um e-mail válido."
+        );
+
         elementos.email.focus();
 
         return false;
@@ -155,9 +564,18 @@ function validarFormulario(){
     }
 
 
-    if(elementos.campus.value === ""){
+    // --------------------------------------------------
+    // CAMPUS
+    // --------------------------------------------------
 
-        alert("Selecione seu campus.");
+    if (
+        elementos.campus.value === ""
+    ) {
+
+        alert(
+            "Selecione seu campus."
+        );
+
         elementos.campus.focus();
 
         return false;
@@ -174,103 +592,163 @@ function validarFormulario(){
 // SUPABASE - GRAVAÇÃO
 // ======================================================
 
-async function salvarControleAcampa(){
-
+async function salvarControleAcampa() {
 
     const dados = {
 
-        nome: elementos.nome.value.trim(),
+        nome:
+            elementos.nome.value.trim(),
 
-        telefone: elementos.telefone.value.trim(),
+        telefone:
+            elementos.telefone.value.trim(),
 
-        email: elementos.email.value.trim(),
+        email:
+            elementos.email.value.trim(),
 
-        campus: elementos.campus.value,
+        campus:
+            elementos.campus.value,
 
-        quantidade_criancas: quantidade,
+        // ID DA CRIANÇA ESCOLHIDA
+        id_crianca:
+            criancaSelecionada.id,
 
-        status: "pendente"
+        // Agora cada apadrinhamento é de uma única criança
+        quantidade_criancas: 1,
+
+        status:
+            "pendente"
 
     };
 
 
-    const { error } = await supabase
-        .from("controle_acampa")
-        .insert([dados]);
+    const { data, error } =
+
+        await supabase
+
+            .from("controle_acampa")
+
+            .insert([dados])
+
+            .select()
+            .single();
 
 
-    /*if(error){
+    if (error) {
 
-        console.error("Erro Supabase:", error);
-
-        alert(
-            "Não foi possível salvar sua inscrição."
+        console.error(
+            "Erro Supabase completo:",
+            error
         );
 
-        return false;
+        console.log(
+            "Mensagem:",
+            error.message
+        );
 
-    } */
+        console.log(
+            "Detalhes:",
+            error.details
+        );
 
-    if(error){
+        console.log(
+            "Hint:",
+            error.hint
+        );
 
-    console.error("Erro Supabase completo:", error);
+        console.log(
+            "Código:",
+            error.code
+        );
 
-    console.log("Mensagem:", error.message);
-    console.log("Detalhes:", error.details);
-    console.log("Hint:", error.hint);
-    console.log("Código:", error.code);
+        alert(
+            "Erro: " + error.message
+        );
 
-    alert(
-        "Erro: " + error.message
-    );
-
-    return null;
+        return null;
 
     }
 
 
-    return true;
-
-
+    return data;
 }
-
 
 // ======================================================
 // LOCAL STORAGE
 // ======================================================
 
-function salvarDadosPagamento(registro){
-
+function salvarDadosPagamento(
+    registro
+) {
 
     const dadosPagamento = {
 
-
-        id: registro.id,
-
-        nome: elementos.nome.value.trim(),
-
-        telefone: elementos.telefone.value.trim(),
-
-        email: elementos.email.value.trim(),
-
-        campus: elementos.campus.value,
+        // ID do registro de controle
+        id:
+            registro.id,
 
 
-        quantidade: quantidade,
+        // Dados do padrinho
+        nome:
+            elementos.nome.value.trim(),
 
-        valorUnitario: VALOR_INSCRICAO,
+        telefone:
+            elementos.telefone.value.trim(),
+
+        email:
+            elementos.email.value.trim(),
+
+        campus:
+            elementos.campus.value,
+
+
+        // Sempre uma inscrição
+        quantidade:
+            1,
+
+
+        valorUnitario:
+            VALOR_INSCRICAO,
+
 
         valorTotal:
-            quantidade * VALOR_INSCRICAO
+            VALOR_INSCRICAO,
+
+
+        // Criança escolhida
+        crianca_id:
+            criancaSelecionada
+                ? criancaSelecionada.id
+                : null,
+
+
+        // Informações adicionais da criança
+        crianca_nome:
+            criancaSelecionada
+                ? criancaSelecionada.nome
+                : null,
+
+        crianca_idade:
+            criancaSelecionada
+                ? criancaSelecionada.idade
+                : null,
+
+        crianca_foto:
+            criancaSelecionada
+                ? criancaSelecionada.foto_url
+                : null
 
     };
 
 
     localStorage.setItem(
-        "apadrinhamentoAcampa",
-        JSON.stringify(dadosPagamento)
-    );
 
+        "apadrinhamentoAcampa",
+
+        JSON.stringify(
+            dadosPagamento
+        )
+
+    );
 
 }
 
@@ -279,80 +757,245 @@ function salvarDadosPagamento(registro){
 // NAVEGAÇÃO
 // ======================================================
 
-function irParaPagamento(){
+function irParaPagamento() {
 
-   window.location.href = "/pagamento";
-  /* window.location.href = "./pagto-acampa.html";*/ 
+    window.location.href =
+        "/pagamento";
 
 }
 
 
 // ======================================================
-// EVENTOS
+// EVENTO
+// FECHAR MODAL DA CRIANÇA
 // ======================================================
 
-
-elementos.btnMais.addEventListener("click",()=>{
-
-    quantidade++;
-
-    atualizarTotal();
-
-});
+elementos.fecharModal.addEventListener(
+    "click",
+    fecharModal
+);
 
 
+// ======================================================
+// EVENTO
+// CLICAR FORA DO MODAL DA CRIANÇA
+// ======================================================
 
-elementos.btnMenos.addEventListener("click",()=>{
+elementos.modal.addEventListener(
+    "click",
+    evento => {
 
+        if (
+            evento.target ===
+            elementos.modal
+        ) {
 
-    if(quantidade > 1){
+            fecharModal();
 
-        quantidade--;
-
-        atualizarTotal();
-
-    }
-
-});
-
-
-
-elementos.telefone.addEventListener(
-    "input",
-    (evento)=>{
-
-        evento.target.value =
-            aplicarMascaraTelefone(evento.target.value);
+        }
 
     }
 );
 
 
+// ======================================================
+// EVENTO
+// FECHAR MODAL DO FORMULÁRIO
+// ======================================================
 
-elementos.btnApadrinhar.addEventListener(
-    "click",
-    async ()=>{
+elementos.fecharModalFormulario
+    .addEventListener(
+        "click",
+        fecharModalFormulario
+    );
 
 
-        if(!validarFormulario()){
-            return;
+// ======================================================
+// EVENTO
+// CLICAR FORA DO MODAL DO FORMULÁRIO
+// ======================================================
+
+elementos.modalFormulario
+    .addEventListener(
+        "click",
+        evento => {
+
+            if (
+                evento.target ===
+                elementos.modalFormulario
+            ) {
+
+                fecharModalFormulario();
+
+            }
+
         }
+    );
 
 
-        const registro =
-            await salvarControleAcampa();
+// ======================================================
+// EVENTO
+// APADRINHAR CRIANÇA
+// ======================================================
+
+elementos.modalApadrinhar
+    .addEventListener(
+        "click",
+        () => {
+
+            if (
+                !criancaSelecionada
+            ) {
+
+                return;
+
+            }
 
 
-        if(!registro){
-            return;
+            fecharModal();
+
+
+            abrirModalFormulario();
+
         }
+    );
 
 
-        salvarDadosPagamento(registro);
+// ======================================================
+// EVENTO
+// MÁSCARA DO TELEFONE
+// ======================================================
+
+elementos.telefone
+    .addEventListener(
+        "input",
+        evento => {
+
+            evento.target.value =
+                aplicarMascaraTelefone(
+                    evento.target.value
+                );
+
+        }
+    );
 
 
-        irParaPagamento();
+// ======================================================
+// EVENTO
+// CONTINUAR PARA PAGAMENTO
+// ======================================================
 
+elementos.btnApadrinhar
+    .addEventListener(
+        "click",
+        async () => {
+
+            // ------------------------------------------
+            // Verifica criança
+            // ------------------------------------------
+
+            if (
+                !criancaSelecionada
+            ) {
+
+                alert(
+                    "Selecione uma criança."
+                );
+
+                return;
+
+            }
+
+
+            // ------------------------------------------
+            // Valida formulário
+            // ------------------------------------------
+
+            if (
+                !validarFormulario()
+            ) {
+
+                return;
+
+            }
+
+
+            // ------------------------------------------
+            // Evita múltiplos cliques
+            // ------------------------------------------
+
+            elementos.btnApadrinhar.disabled =
+                true;
+
+            elementos.btnApadrinhar.textContent =
+                "Processando...";
+
+
+            // ------------------------------------------
+            // Salva no Supabase
+            // ------------------------------------------
+
+            const registro =
+                await salvarControleAcampa();
+
+
+            // ------------------------------------------
+            // Se deu erro
+            // ------------------------------------------
+
+            if (!registro) {
+
+                elementos.btnApadrinhar.disabled =
+                    false;
+
+                elementos.btnApadrinhar.textContent =
+                    "Continuar para pagamento";
+
+                return;
+
+            }
+
+
+            // ------------------------------------------
+            // Salva dados para pagamento
+            // ------------------------------------------
+
+            salvarDadosPagamento(
+                registro
+            );
+
+
+            // ------------------------------------------
+            // Vai para pagamento
+            // ------------------------------------------
+
+            irParaPagamento();
+
+        }
+    );
+
+
+// ======================================================
+// FECHAR MODAIS COM ESC
+// ======================================================
+
+document.addEventListener(
+    "keydown",
+    evento => {
+
+        if (
+            evento.key === "Escape"
+        ) {
+
+            elementos.modal.classList.remove(
+                "aberto"
+            );
+
+            elementos.modalFormulario.classList.remove(
+                "aberto"
+            );
+
+        }
 
     }
 );
@@ -362,4 +1005,4 @@ elementos.btnApadrinhar.addEventListener(
 // INICIALIZAÇÃO
 // ======================================================
 
-atualizarTotal();
+carregarCriancas();
