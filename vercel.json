@@ -15,6 +15,16 @@
     {
       "source": "/acompanhamento",
       "destination": "/pages/acompanhamento.html"
+    },
+
+    {
+      "source": "/admin",
+      "destination": "/pages/admin.html"
     }
+
+
+
+
+
   ]
 }
