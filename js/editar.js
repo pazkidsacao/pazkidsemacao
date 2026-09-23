@@ -55,6 +55,25 @@ telefoneInput.addEventListener("input", (e) => {
 });
 
 // ======================
+// PRÉ-VISUALIZAÇÃO DA FOTO
+// ======================
+
+const fotoInput = document.getElementById("foto");
+const fotoAtual = document.getElementById("foto-atual");
+
+fotoInput?.addEventListener("change", () => {
+
+    const file = fotoInput.files[0];
+
+    if (!file) return;
+
+    const url = URL.createObjectURL(file);
+
+    fotoAtual.src = url;
+
+});
+
+// ======================
 // CARREGAR CRIANÇA
 // ======================
 

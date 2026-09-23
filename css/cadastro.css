@@ -143,12 +143,32 @@ transition: 0.2s;
 
 }
 
-.botao-editar:hover {
+.botao-excluir {
+background-color: #cf0c4d;
+color: white;
+border: none;
+
+padding: 8px 16px;
+
+border-radius: 8px;
+
+cursor: pointer;
+
+font-size: 0.9rem;
+font-weight: 600;
+
+transition: 0.2s;
+
+}
+
+.botao-editar:hover, 
+.botao-excluir:hover{
 transform: translateY(-1px);
 opacity: 0.9;
 }
 
-.botao-editar:active {
+.botao-editar:active,
+.botao-excluir:active {
 transform: translateY(1px);
 }
 
@@ -263,8 +283,11 @@ td {
     height: 40px;
 }
 
-.botao-editar {
+.botao-editar,
+.botao-excluir{
     padding: 6px 10px;
     font-size: 0.8rem;
 }
+
+
 }

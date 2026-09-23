@@ -103,7 +103,13 @@ async function carregarCriancas() {
                 <button class="botao-editar" data-id="${crianca.id}">
                     Editar
                 </button>
+
+                <button class="botao-excluir" data-id="${crianca.id}">
+                    Excluir
+                </button>
             </td>
+
+            
         `;
 
         lista.appendChild(tr);
@@ -119,6 +125,38 @@ async function carregarCriancas() {
         });
 
     });
+
+
+    document.querySelectorAll(".botao-excluir").forEach(btn => {
+
+    btn.addEventListener("click", async () => {
+
+        const id = btn.dataset.id;
+
+        const confirmar = confirm(
+            "Tem certeza que deseja excluir esta criança?"
+        );
+
+        if (!confirmar) return;
+
+        const { error } = await supabase
+            .from("criancas")
+            .delete()
+            .eq("id", id);
+
+        if (error) {
+            console.error("Erro ao excluir criança:", error);
+            alert("Não foi possível excluir a criança.");
+            return;
+        }
+
+        alert("Criança excluída com sucesso!");
+
+        carregarCriancas();
+
+    });
+
+});
 }
 
 // ======================
