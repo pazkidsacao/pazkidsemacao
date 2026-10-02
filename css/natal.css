@@ -1,0 +1,742 @@
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.secao-principal {
+    background-image: url("/imagens/natalpresente.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 360px;
+}
+
+.camada-escura {
+    min-height: 360px;
+    background: rgba(203, 196, 207, 0.60);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.conteudo-principal {
+    width: 90%;
+    max-width: 1200px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 35px;
+    padding: 40px 20px;
+}
+
+#logo {
+    width: 110px;
+    height: auto;
+}
+
+.area-texto {
+    text-align: center;
+}
+
+.slogan {
+    color: #020000;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   CONFIGURAÇÃO GERAL DAS SEÇÕES
+========================================================= */
+
+.dados-acampa,
+.secao-informacoes,
+.secao-sacola,
+.secao-detalhes,
+.secao-entrega,
+.secao-doacao {
+    background: #ffffff;
+    padding: 35px 20px;
+}
+
+
+/* =========================================================
+   TÍTULOS
+========================================================= */
+
+.titulo-secao {
+    text-align: center;
+
+    color: #9b0404;
+
+    font-size: 1.9rem;
+    line-height: 1.3;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================================
+   APRESENTAÇÃO
+========================================================= */
+
+.container-acampa {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.conteudo-acampa {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.texto-acampa-paragrafo {
+    font-size: 1.2rem;
+    color: #444;
+
+    margin-bottom: 10px;
+}
+
+.texto-acampa-paragrafo:last-child {
+    margin-bottom: 0;
+}
+
+.texto-acampa-paragrafo strong {
+    color: #9b0404;
+}
+
+
+/* =========================================================
+   COMO FUNCIONA
+========================================================= */
+
+.container-informacoes {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+.passos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.passo {
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+    border-radius: 16px;
+
+    padding: 30px 25px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.passo:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.11);
+}
+
+.numero-passo {
+    width: 52px;
+    height: 52px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #9b0404;
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.passo h3 {
+    color: #c70640;
+
+    font-size: 1.4rem;
+
+    margin-bottom: 10px;
+}
+
+.passo p {
+    color: #555;
+
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SACOLINHA
+========================================================= */
+
+.container-sacola {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.texto-central {
+    color: #555;
+
+    font-size: 1.5rem;
+
+    margin-bottom: 30px;
+}
+
+.itens-sacola {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 18px;
+
+    max-width:1000px;
+    margin: 0 auto;
+}
+
+.item-sacola {
+    background: #fafafa;
+
+    border: 1px solid #eeeeee;
+    border-top: 4px solid #c70640;
+
+    border-radius: 14px;
+
+    padding: 25px 15px;
+
+    min-height: 130px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.item-sacola span {
+    font-size: 2rem;
+}
+
+.item-sacola strong {
+    color: #9b0404;
+
+    font-size: 1.5rem;
+}
+
+.item-sacola small {
+    color: #777;
+
+    font-size: 1.0rem;
+}
+
+
+/* =========================================================
+   DETALHES DA CRIANÇA
+========================================================= */
+
+.container-detalhes {
+    width: 90%;
+    max-width:1000px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.container-detalhes > p {
+    max-width:100%;
+
+    margin: 0 auto 25px;
+
+    color: #555;
+
+    font-size: 1.3rem;
+}
+
+.lista-detalhes {
+    background: #fafafa;
+
+    border: 1px solid #eeeeee;
+    border-radius: 16px;
+
+    padding: 10px 25px;
+
+    max-width: 1000px;
+
+    margin: 30px auto;
+
+    text-align: left;
+
+    box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.lista-detalhes span {
+    display: block;
+
+    padding: 16px 5px;
+
+    border-bottom: 1px solid #dddddd;
+
+    color: #444;
+
+    font-size: 1.3rem;
+}
+
+.lista-detalhes span:last-child {
+    border-bottom: none;
+}
+
+
+/* =========================================================
+   ENTREGA
+========================================================= */
+
+.container-entrega {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.informacao-entrega {
+    max-width: 1000px;
+
+    margin: 0 auto 25px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.informacao-entrega > div {
+    background: #fafafa;
+
+    border: 1px solid #eeeeee;
+    border-top: 4px solid #c70640;
+
+    border-radius: 14px;
+
+    padding: 25px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.informacao-entrega strong {
+    color: #9b0404;
+
+    font-size: 1rem;
+}
+
+.informacao-entrega span {
+    color: #444;
+
+    font-size: 1.05rem;
+}
+
+.container-entrega > p {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    color: #555;
+
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   DOAÇÃO
+========================================================= */
+
+.container-doacao {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.container-doacao > p {
+    max-width: 1000px;
+
+    margin: 0 auto 30px;
+
+    color: #555;
+
+    font-size: 1.05rem;
+}
+
+.dados-pix {
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.dados-pix > div {
+    background: #fafafa;
+
+    border: 1px solid #eeeeee;
+    border-radius: 14px;
+
+    padding: 22px 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dados-pix strong {
+    color: #9b0404;
+
+    font-size: 0.95rem;
+}
+
+.dados-pix span {
+    color: #444;
+
+    font-size: 1rem;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   CHAMADA FINAL
+========================================================= */
+
+.secao-apadrinhamento {
+    background: #9b0404;
+
+    padding: 70px 20px;
+
+    color: #ffffff;
+
+    text-align: center;
+}
+
+.container-apadrinhamento {
+    width: 90%;
+    max-width: 750px;
+
+    margin: 0 auto;
+}
+
+.container-apadrinhamento h2 {
+    font-size: 2rem;
+
+    line-height: 1.3;
+
+    margin-bottom: 15px;
+}
+
+.container-apadrinhamento p {
+    font-size: 1.1rem;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   BOTÃO
+========================================================= */
+
+.btn-escolher {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+    color: #9b0404;
+
+    padding: 15px 35px;
+
+    min-width: 240px;
+
+    border-radius: 30px;
+
+    text-decoration: none;
+
+    font-size: 1.05rem;
+    font-weight: bold;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.btn-escolher:hover {
+    background: #f2f2f2;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .secao-principal,
+    .camada-escura {
+        min-height: 320px;
+    }
+
+    .conteudo-principal {
+        flex-direction: column;
+
+        gap: 20px;
+
+        text-align: center;
+    }
+
+    #logo {
+        width: 90px;
+    }
+
+    .slogan {
+        font-size: 2rem;
+    }
+
+
+    /* COMO FUNCIONA */
+
+    .passos {
+        grid-template-columns: 1fr;
+
+        max-width: 500px;
+    }
+
+
+    /* SACOLINHA */
+
+    .itens-sacola {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* ENTREGA */
+
+    .informacao-entrega {
+        grid-template-columns: 1fr;
+
+        max-width: 500px;
+    }
+
+
+    /* PIX */
+
+    .dados-pix {
+        grid-template-columns: 1fr;
+
+        max-width: 500px;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .secao-principal,
+    .camada-escura {
+        min-height: 290px;
+    }
+
+    .conteudo-principal {
+        padding: 30px 15px;
+    }
+
+    #logo {
+        width: 80px;
+    }
+
+    .slogan {
+        font-size: 1.65rem;
+    }
+
+
+    /* ESPAÇAMENTO DAS SEÇÕES */
+
+    .dados-acampa,
+    .secao-informacoes,
+    .secao-sacola,
+    .secao-detalhes,
+    .secao-entrega,
+    .secao-doacao {
+        padding: 50px 15px;
+    }
+
+
+    /* TÍTULOS */
+
+    .titulo-secao {
+        font-size: 1.55rem;
+
+        margin-bottom: 28px;
+    }
+
+
+    /* APRESENTAÇÃO */
+
+    .texto-acampa-paragrafo {
+        font-size: 1rem;
+    }
+
+
+    /* COMO FUNCIONA */
+
+    .passo {
+        padding: 25px 20px;
+    }
+
+
+    /* SACOLINHA */
+
+    .itens-sacola {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 12px;
+    }
+
+    .item-sacola {
+        min-height: 115px;
+
+        padding: 20px 10px;
+    }
+
+    .item-sacola span {
+        font-size: 1.7rem;
+    }
+
+    .item-sacola strong {
+        font-size: 0.95rem;
+    }
+
+
+    /* DETALHES */
+
+    .lista-detalhes {
+        padding: 8px 18px;
+    }
+
+    .lista-detalhes span {
+        font-size: 0.95rem;
+    }
+
+
+    /* ENTREGA */
+
+    .informacao-entrega > div {
+        padding: 20px 15px;
+    }
+
+
+    /* CHAMADA FINAL */
+
+    .container-apadrinhamento h2 {
+        font-size: 1.6rem;
+    }
+
+    .container-apadrinhamento p {
+        font-size: 1rem;
+    }
+
+
+    /* BOTÃO */
+
+    .btn-escolher {
+        width: 100%;
+
+        max-width: 320px;
+    }
+}
