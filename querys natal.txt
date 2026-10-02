@@ -1,0 +1,54 @@
+CREATE TABLE public.criancas_natal26 (
+    id BIGINT PRIMARY KEY,
+    foto_url TEXT,
+    nome VARCHAR NOT NULL,
+    data_nascimento DATE,
+    serie_escolar VARCHAR,
+    tamanho_blusa VARCHAR,
+    tamanho_calca VARCHAR,
+    tamanho_calcado VARCHAR,
+    hobby VARCHAR,
+
+    adotada TEXT NOT NULL DEFAULT 'Não',
+
+    nome_padrinho VARCHAR,
+    tel_padrinho VARCHAR,
+    email_padrinho VARCHAR,
+    campus_padrinho VARCHAR,
+
+    data_adocao TIMESTAMP,
+    status_entrega TEXT NOT NULL DEFAULT 'Pendente',
+    data_entrega TIMESTAMP,
+    observacoes_entrega TEXT,
+
+    CONSTRAINT fk_crianca_natal26
+        FOREIGN KEY (id)
+        REFERENCES public.criancas(id)
+);
+
+
+
+INSERT INTO public.criancas_natal26 (
+    id,
+    foto_url,
+    nome,
+    data_nascimento,
+    serie_escolar,
+    tamanho_blusa,
+    tamanho_calca,
+    tamanho_calcado,
+    hobby
+)
+SELECT
+    id,
+    foto_url,
+    nome,
+    data_nascimento,
+    serie_escolar,
+    tamanho_blusa,
+    tamanho_calca,
+    tamanho_calcado,
+    hobby
+FROM public.criancas
+WHERE ativo = 'Sim'
+  AND foto_url IS NOT NULL;
