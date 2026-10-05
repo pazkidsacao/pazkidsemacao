@@ -31,15 +31,16 @@ img {
 ========================================================= */
 
 .secao-principal {
-    background-image: url("/imagens/natalpresente.jpg");
+    background-image: url("/imagens/sacolinha2.png");
     background-size: cover;
     background-position: center;
     min-height: 360px;
+    position: relative;
 }
 
 .camada-escura {
     min-height: 360px;
-    background: rgba(203, 196, 207, 0.60);
+    background: rgba(203, 196, 207, 0.10);
 
     display: flex;
     align-items: center;
@@ -47,20 +48,22 @@ img {
 }
 
 .conteudo-principal {
-    width: 90%;
-    max-width: 1200px;
+    position: absolute;
+
+    top: 20px;
+    left: 30px;
 
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
 
-    gap: 35px;
-    padding: 40px 20px;
+    padding: 0;
 }
 
 #logo {
     width: 110px;
     height: auto;
+   
 }
 
 .area-texto {
@@ -739,4 +742,22 @@ img {
 
         max-width: 320px;
     }
+}
+
+
+h1 {
+    font-family: "Berkshire Swash", cursive;
+    font-size: 52px;
+}
+
+h2 {
+    font-family: "Berkshire Swash", cursive;
+    font-size: 36px;
+}
+
+h3,
+p,
+button,
+a {
+    font-family: "Poppins", sans-serif;
 }

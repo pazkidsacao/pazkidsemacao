@@ -1,4 +1,3 @@
-
 /* ==========================================================
    VARIÁVEIS DE CORES
 ========================================================== */
@@ -22,7 +21,6 @@
     --fundo-suave: #fafafa;
 
     --borda: #eeeeee;
-
 }
 
 
@@ -62,24 +60,36 @@ img {
 .secao-principal {
 
     background-image:
-        url("/imagens/natal.webp");
+        url("/imagens/sacolinha2.png");
 
-    background-size: 100%, 50%;
+    background-size: cover;
 
     background-position: center;
 
     background-repeat: no-repeat;
+
+    min-height: 360px;
+
+    position: relative;
 }
 
 .camada-escura {
 
-    background:
-        rgba(172, 20, 65, 0.45);
+    min-height: 360px;
 
-    padding: 30px 10px;
+    background:
+        rgba(203, 196, 207, 0.10);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 }
 
 .container {
+
+    width: 90%;
 
     max-width: 1200px;
 
@@ -88,16 +98,28 @@ img {
 
 .conteudo-principal {
 
+    position: absolute;
+
+    top: 20px;
+
+    left: 30px;
+
     display: flex;
 
-    align-items: center;
+    align-items: flex-start;
 
-    gap: 50px;
+    justify-content: flex-start;
+
+    gap: 35px;
+
+    padding: 0;
 }
 
 #logo {
 
-    width: 100px;
+    width: 110px;
+
+    height: auto;
 }
 
 .area-texto {
@@ -371,6 +393,10 @@ img {
         rgba(0, 0, 0, .70);
 
     z-index: 1000;
+
+    overflow-y: auto;
+
+    overscroll-behavior: contain;
 }
 
 .modal-crianca.aberto {
@@ -391,7 +417,9 @@ img {
 
     max-width: 450px;
 
-    padding: 30px;
+    max-height: calc(100vh - 40px);
+
+    padding: 25px;
 
     background: #ffffff;
 
@@ -402,6 +430,12 @@ img {
         rgba(0, 0, 0, .30);
 
     text-align: center;
+
+    overflow-y: auto;
+
+    overscroll-behavior: contain;
+
+    scrollbar-width: thin;
 
     animation:
         aparecerModal .25s ease;
@@ -481,7 +515,7 @@ img {
 
     width: 100%;
 
-    height: 330px;
+    height: 280px;
 
     object-fit: contain;
 
@@ -489,7 +523,7 @@ img {
 
     border-radius: 15px;
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 
@@ -512,7 +546,55 @@ img {
 
     font-size: 1.05rem;
 
-    margin-bottom: 25px;
+    margin-bottom: 18px;
+}
+
+
+/* ==========================================================
+   APRESENTAÇÃO DA CRIANÇA
+========================================================== */
+
+.apresentacao-crianca {
+
+    margin-top: 15px;
+
+    margin-bottom: 20px;
+
+    padding: 18px;
+
+    background:
+        var(--vermelho-claro);
+
+    border-radius: 12px;
+
+    border-left:
+        4px solid var(--vermelho-principal);
+
+    text-align: left;
+}
+
+.apresentacao-crianca p {
+
+    margin:
+        0 0 12px;
+
+    color:
+        var(--texto-principal);
+
+    font-size: 15px;
+
+    line-height: 1.6;
+}
+
+.apresentacao-crianca p:last-child {
+
+    margin-bottom: 0;
+}
+
+.apresentacao-crianca strong {
+
+    color:
+        var(--vermelho-principal);
 }
 
 
@@ -524,7 +606,7 @@ img {
 
     width: 100%;
 
-    padding: 16px;
+    padding: 15px;
 
     border: none;
 
@@ -535,7 +617,7 @@ img {
 
     color: #ffffff;
 
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 
     font-weight: bold;
 
@@ -560,13 +642,17 @@ img {
 
 .conteudo-modal-formulario {
 
+    width: 100%;
+
     max-width: 550px;
 
-    max-height: 90vh;
+    max-height: calc(100vh - 40px);
 
     overflow-y: auto;
 
     text-align: left;
+
+    overscroll-behavior: contain;
 }
 
 
@@ -701,9 +787,9 @@ img {
 
     width: 100%;
 
-    padding: 14px;
+    padding: 13px;
 
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 
     border:
         1px solid #cccccc;
@@ -739,7 +825,7 @@ hr {
 
     width: 100%;
 
-    margin: 10px 0 25px;
+    margin: 10px 0 20px;
 
     border: none;
 
@@ -758,7 +844,7 @@ hr {
 
     margin-top: 5px;
 
-    padding: 18px;
+    padding: 16px;
 
     border: none;
 
@@ -769,7 +855,7 @@ hr {
 
     color: #ffffff;
 
-    font-size: 1.1rem;
+    font-size: 1.05rem;
 
     font-weight: bold;
 
@@ -808,7 +894,6 @@ hr {
         grid-template-columns:
             repeat(3, 1fr);
     }
-
 }
 
 
@@ -820,11 +905,19 @@ hr {
 
     .conteudo-principal {
 
+        position: absolute;
+
+        top: 15px;
+
+        left: 20px;
+
         flex-direction: column;
+
+        align-items: flex-start;
 
         gap: 20px;
 
-        text-align: center;
+        text-align: left;
     }
 
     .container-acampa {
@@ -890,25 +983,79 @@ hr {
         font-size: 1.6rem;
     }
 
+
+    /* ------------------------------------------------------
+       MODAL NO CELULAR
+    ------------------------------------------------------ */
+
+    .modal-crianca {
+
+        align-items: flex-start;
+
+        padding:
+            15px 10px;
+    }
+
     .conteudo-modal {
 
-        max-width: 95%;
+        width: 100%;
 
-        padding: 22px;
+        max-width: 500px;
+
+        max-height: calc(100vh - 30px);
+
+        padding: 20px;
+
+        margin:
+            0 auto;
     }
 
     .modal-foto {
 
-        height: 300px;
+        height: 240px;
 
-        object-fit: contain;
+        margin-bottom: 15px;
+    }
+
+    #modal-nome {
+
+        font-size: 1.5rem;
+    }
+
+    #modal-idade {
+
+        margin-bottom: 15px;
+    }
+
+    .apresentacao-crianca {
+
+        padding: 15px;
+
+        margin-top: 10px;
+
+        margin-bottom: 15px;
+    }
+
+    .apresentacao-crianca p {
+
+        font-size: 14px;
+
+        line-height: 1.55;
+    }
+
+    .btn-modal-apadrinhar {
+
+        padding: 14px;
+
+        font-size: 1rem;
     }
 
     .conteudo-modal-formulario {
 
-        max-height: 92vh;
-    }
+        max-height: calc(100vh - 30px);
 
+        padding: 20px;
+    }
 }
 
 
@@ -945,11 +1092,26 @@ hr {
         object-fit: contain;
     }
 
+    .modal-crianca {
+
+        padding:
+            10px 8px;
+    }
+
+    .conteudo-modal {
+
+        max-height: calc(100vh - 20px);
+
+        padding: 18px;
+
+        border-radius: 16px;
+    }
+
     .modal-foto {
 
-        height: 280px;
+        height: 210px;
 
-        object-fit: contain;
+        margin-bottom: 12px;
     }
 
     .crianca-escolhida img {
@@ -957,11 +1119,6 @@ hr {
         width: 60px;
 
         height: 60px;
-    }
-
-    .conteudo-modal {
-
-        padding: 20px;
     }
 
     .titulo-criancas {
@@ -974,28 +1131,132 @@ hr {
         font-size: .95rem;
     }
 
+    .apresentacao-crianca {
+
+        padding: 14px;
+
+        margin-top: 8px;
+
+        margin-bottom: 12px;
+    }
+
+    .apresentacao-crianca p {
+
+        font-size: 14px;
+
+        line-height: 1.5;
+    }
 }
 
-.apresentacao-crianca {
-    margin-top: 20px;
-    padding: 20px;
-    background: var(--vermelho-claro);
-    border-radius: 12px;
-    border-left: 4px solid var(--vermelho-principal);
-    text-align: left;
+
+/* ==========================================================
+   TELAS COM POUCA ALTURA
+   Ex.: notebook com zoom 100%
+========================================================== */
+
+@media (max-height: 800px) and (min-width: 769px) {
+
+    .conteudo-modal {
+
+        max-height: calc(100vh - 30px);
+
+        padding: 20px;
+    }
+
+    .modal-foto {
+
+        height: 220px;
+
+        margin-bottom: 12px;
+    }
+
+    #modal-idade {
+
+        margin-bottom: 12px;
+    }
+
+    .apresentacao-crianca {
+
+        margin-top: 10px;
+
+        margin-bottom: 12px;
+
+        padding: 14px;
+    }
+
+    .apresentacao-crianca p {
+
+        font-size: 14px;
+
+        line-height: 1.5;
+
+        margin-bottom: 9px;
+    }
+
+    .btn-modal-apadrinhar {
+
+        padding: 13px;
+
+        font-size: 1rem;
+    }
 }
 
-.apresentacao-crianca p {
-    margin: 0 0 15px;
-    color: var(--texto-principal);
-    font-size: 16px;
-    line-height: 1.7;
-}
 
-.apresentacao-crianca p:last-child {
-    margin-bottom: 0;
-}
+/* ==========================================================
+   TELAS MUITO BAIXAS
+   Ajuste adicional para notebooks menores
+========================================================== */
 
-.apresentacao-crianca strong {
-    color: var(--vermelho-principal);
+@media (max-height: 650px) and (min-width: 769px) {
+
+    .conteudo-modal {
+
+        max-height: calc(100vh - 20px);
+
+        padding: 16px;
+    }
+
+    .modal-foto {
+
+        height: 170px;
+
+        margin-bottom: 10px;
+    }
+
+    #modal-nome {
+
+        font-size: 1.4rem;
+    }
+
+    #modal-idade {
+
+        font-size: .95rem;
+
+        margin-bottom: 8px;
+    }
+
+    .apresentacao-crianca {
+
+        padding: 12px;
+
+        margin-top: 6px;
+
+        margin-bottom: 10px;
+    }
+
+    .apresentacao-crianca p {
+
+        font-size: 13px;
+
+        line-height: 1.4;
+
+        margin-bottom: 7px;
+    }
+
+    .btn-modal-apadrinhar {
+
+        padding: 11px;
+
+        font-size: .95rem;
+    }
 }
