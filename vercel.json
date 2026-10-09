@@ -24,15 +24,15 @@
 
     
     {
-      "source": "/natal",
+      "source": "/natal2026",
       "destination": "/pages/natal.html"
     },
     {
-      "source": "/natal2026",
+      "source": "/criancas-natal2026",
       "destination": "/pages/natal26.html"
     },
     {
-      "source": "/admin-natal",
+      "source": "/natal-admin",
       "destination": "/pages/natal_admin.html"
     }
   ]
