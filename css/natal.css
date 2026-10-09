@@ -60,7 +60,7 @@ img {
 }
 
 #logo {
-    width: 110px;
+    width: 90px;
     height: auto;
 }
 
@@ -656,6 +656,43 @@ a.btn-escolher-inicial:hover {
         0 6px 14px rgba(0, 0, 0, 0.18);
 }
 
+.btn-copiar-pix {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    background: #f1f1f1;
+    color: #176b45;
+    padding: 5px 9px;
+    margin-left: 6px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.btn-copiar-pix svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.btn-copiar-pix:hover {
+    background: #176b45;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.btn-copiar-pix.copiado {
+    background: #176b45;
+    color: #ffffff;
+}
 
 /* =========================================================
    FONTES
@@ -701,7 +738,7 @@ a {
     }
 
     #logo {
-        width: 90px;
+        width: 70px;
     }
 
     .slogan {
@@ -760,7 +797,7 @@ a {
     }
 
     #logo {
-        width: 80px;
+        width: 50px;
     }
 
     .slogan {
