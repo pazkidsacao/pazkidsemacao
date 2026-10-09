@@ -20,11 +20,24 @@
     {
       "source": "/admin",
       "destination": "/pages/admin.html"
+    },
+
+    
+    {
+      "source": "/natal",
+      "destination": "/pages/natal.html"
+    },
+    {
+      "source": "/natal2026",
+      "destination": "/pages/natal26.html"
+    },
+    {
+      "source": "/admin-natal",
+      "destination": "/pages/natal_admin.html"
     }
-
-
-
-
-
   ]
 }
+
+
+
+  
